@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <header className="w-full border-b font-roboto-condensed border-gray-200">
@@ -22,15 +22,29 @@ const Navbar = () => {
       {/* Bottom Navbar */}
       <nav className="w-full  text-left bg-white">
         <div className=" mx-auto px-4">
-          <ul className="flex  space-x-20 ml-14 py-3 text-sm font-semibold text-gray-900 tracking-wide">
-            <li className="hover:text-red-500 cursor-pointer">HOME</li>
-            <li className="hover:text-red-500 cursor-pointer">SHIPPERS</li>
-            <li className="hover:text-red-500 cursor-pointer">CARRIERS</li>
-            <li className="hover:text-red-500 cursor-pointer">RESOURCES</li>
-            <li className="hover:text-red-500 cursor-pointer">PLANNING</li>
-            <li className="hover:text-red-500 cursor-pointer">ADVANTAGES</li>
-            <li className="hover:text-red-500 cursor-pointer">CONTACT US</li>
-          </ul>
+        <ul className="flex space-x-20 ml-14 py-3 text-sm font-semibold text-gray-900 tracking-wide">
+  <li className="hover:text-red-500 cursor-pointer">
+    <Link to="/">HOME</Link>
+  </li>
+  <li className="hover:text-red-500 cursor-pointer">
+    <Link to="/flatbed">SHIPPERS</Link>
+  </li>
+  <li className="hover:text-red-500 cursor-pointer">
+    <Link to="/TemperatureControlledShipping">CARRIERS</Link>
+  </li>
+  <li className="hover:text-red-500 cursor-pointer">
+    <Link to="/resources">RESOURCES</Link>
+  </li>
+  <li className="hover:text-red-500 cursor-pointer">
+    <Link to="/planning">PLANNING</Link>
+  </li>
+  <li className="hover:text-red-500 cursor-pointer">
+    <Link to="/advantages">ADVANTAGES</Link>
+  </li>
+  <li className="hover:text-red-500 cursor-pointer">
+    <Link to="/contact-us">CONTACT US</Link>
+  </li>
+</ul>
         </div>
       </nav>
     </header>

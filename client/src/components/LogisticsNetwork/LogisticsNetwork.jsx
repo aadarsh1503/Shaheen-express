@@ -57,7 +57,7 @@ const LogisticsNetwork = () => {
 
   return (
     <section
-      className="relative w-full h-[1100px] flex items-center  justify-between px-12 bg-cover bg-center"
+      className="relative w-full font-roboto-condensed h-[1100px] flex items-center  justify-between px-12 bg-cover bg-center"
       style={{ backgroundImage: `url(${i1})` }}
     >
       {/* Left Side Text */}

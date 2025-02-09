@@ -2,7 +2,7 @@ import { FaFacebookF, FaInstagram, FaXTwitter, FaLinkedinIn,FaPhone } from "reac
 
 const Footer = () => {
   return (
-    <footer className="bg-[#F73D38] text-white py-10 px-5 lg:px-20">
+    <footer className="bg-[#F73D38] font-roboto-condensed text-white py-10 px-5 lg:px-20">
         <div>
         <h2 className="text-4xl mb-10 text-center font-bold uppercase ">
           We Offer Solutions to Various Industries

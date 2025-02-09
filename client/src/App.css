@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Noto+Sans+Display:wght@400;500;600;700&display=swap');
 
 @layer utilities {
   .shadow-custom {
@@ -12,5 +12,8 @@
   }
   .font-roboto-condensed {
     font-family: 'Roboto Condensed', sans-serif;
+  }
+  .font-noto-sans-display {
+    font-family: 'Noto Sans Display', sans-serif;
   }
 }
