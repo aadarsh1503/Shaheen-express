@@ -72,7 +72,7 @@ export default function ShippingServices() {
           style={{ backgroundImage: `Url(${i4})`, backgroundSize: "cover", backgroundPosition: "center" }}
         >
               <div
-    className="absolute inset-0 bg-white opacity-70" // यहां opacity को समायोजित करें (0.50 = 50%)
+    className="absolute inset-0 bg-white opacity-70" // 
   ></div>
           <div className="relative bg-opacity-75 mt-16 p-6 h-full flex flex-col">
             <h2 className="text-lg font-bold uppercase text-blue-900">Cross-Border</h2>

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Noto+Sans+Display:wght@400;500;600;700&display=swap');
 
+
+
 @layer utilities {
   .shadow-custom {
     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
@@ -7,8 +9,17 @@
   .bg-Green {
     background-color: #827127;
   }
-  .text-Green {
-    color: #827127;  /* For text color */
+  .bg-Red {
+    background-color: #F73D38;
+  }
+  .bg-Red1 {
+    background-color: #f8504c;
+  }
+  .text-Blue {
+    color: #264795;
+  }
+  .text-Red {
+    color: #F73D38;
   }
   .font-roboto-condensed {
     font-family: 'Roboto Condensed', sans-serif;

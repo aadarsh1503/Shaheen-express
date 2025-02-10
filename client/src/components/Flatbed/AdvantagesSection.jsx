@@ -30,7 +30,7 @@ const AdvantagesSection = () => {
       {/* Left Side Text */}
       <div className="w-1/3">
         <h4 className="text-black text-sm mb-6 font-semibold">Features</h4>
-        <h2 className="text-[#264795] text-4xl font-light w-[220px] leading-tight">
+        <h2 className="text-[#264795] text-5xl font-light w-[370px] leading-tight">
           Advantages to Work With Shaheen Express LLC
         </h2>
       </div>
