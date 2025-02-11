@@ -4,6 +4,7 @@ import BoxTruckService from "./BoxTruckService.JSX";
 import LogisticsSection from "./LogisticsSection";
 import AdvantagesSection from "../Flatbed/AdvantagesSection";
 import AgentPartnerSection from "../Flatbed/AgentPartnerSection";
+import Testimonialbox from "./Testimonialbox";
 
 const BoxTruck = () => {
   return (
@@ -43,6 +44,7 @@ const BoxTruck = () => {
 <LogisticsSection />
 <AdvantagesSection />
 <AgentPartnerSection />
+<Testimonialbox />
     </div>
   );
 };

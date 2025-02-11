@@ -6,6 +6,8 @@ import TransportServices from "./TransportServices";
 import Shipping1 from "./Shipping1";
 import AdvantagesSection from "../Flatbed/AdvantagesSection";
 import AgentPartnerSection from "../Flatbed/AgentPartnerSection";
+import TestimonialLoad from "../LoadBoard/TestimonialLoad";
+import Testimonialbox from "./TestimonialLoad";
 
 
 export default function TruckLoad() {
@@ -31,12 +33,12 @@ export default function TruckLoad() {
           </div>
   
           {/* Right Content */}
-          <div className="lg:w-1/ mt-10 lg:mt-0 lg:ml-10 bg-[#F73D38] p-6 rounded-lg shadow-lg text-white">
+          <div className="lg:w-1/ mt-10 lg:mt-0 lg:ml-10 w-[400px] bg-[#F73D38] p-6 rounded-lg shadow-lg text-white">
             <div className="flex items-start">
               <div className="  p-3 rounded-full">
               <div className="rounded-full p-4 bg-[#f8504c]"><FaAngleDoubleRight /></div>
               </div>
-              <p className="ml-4 text-[14px] w-[220px]">
+              <p className="ml-4 text-[16px] w-[220px]">
               Now you can easily navigate today's fragmented truckload market and access the largest network of vetted, high-quality carriers in the US and Canada with Shaheen Express.
               </p>
             </div>
@@ -47,7 +49,7 @@ export default function TruckLoad() {
               <div className="b bg-opacity-20 p-3 rounded-full">
               <div className="rounded-full p-4 bg-[#f8504c]"><FaAngleDoubleRight /></div>
               </div>
-              <p className="ml-4 text-[14px] w-[220px]">
+              <p className="ml-4 text-[16px] w-[220px]">
               Shaheen Express has the latest technology to automate the entire freight lifecycle and help to improve your truckload RFP process, get adequate end-to-end visibility, and maximize efficiency for your shipments.
               </p>
             </div>
@@ -58,7 +60,7 @@ export default function TruckLoad() {
               <div className=" bg-opacity-20 p-3 rounded-full">
               <div className="rounded-full p-4 bg-[#f8504c]"><FaAngleDoubleRight /></div>
               </div>
-              <p className="ml-4 text-[14px] w-[220px]">
+              <p className="ml-4 text-[16px] w-[220px]">
               Shaheen Express has a Trustworthy supply chain and experts to track market shifts, act as an addition to your team, and develop solutions based on your business requirements.
               </p>
             </div>
@@ -70,6 +72,7 @@ export default function TruckLoad() {
 <Shipping1 />
 <AdvantagesSection />
 <AgentPartnerSection />
+<Testimonialbox />
       </div>
     );
   }

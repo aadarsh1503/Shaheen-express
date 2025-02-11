@@ -23,7 +23,7 @@ const Testimonial4 = () => {
           key={index}
           className="w-1/2 border-r last:border-r-0 pr-10 last:pr-0"
         >
-          <p className="text-gray-600 text-[13px] ">"{testimonial.text}"</p>
+          <p className="text-gray-600 text-[16px] ">"{testimonial.text}"</p>
           <div className="flex items-center mt-4">
             <div className="w-12 h-12 bg-red-500 flex items-center justify-center rounded-full text-white text-xl">
               <FaUser />

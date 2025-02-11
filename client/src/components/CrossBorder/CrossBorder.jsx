@@ -3,6 +3,7 @@ import i1 from "./i1.jpg"
 import BorderCrossingSolutions from "./BorderCrossingSolutions";
 import AdvantagesSection from "../Flatbed/AdvantagesSection";
 import AgentPartnerSection from "../Flatbed/AgentPartnerSection";
+import TestimonialLoad from "../LoadBoard/TestimonialLoad";
 
 
 
@@ -76,6 +77,7 @@ Optimize your worldwide order fulfilment, and delivery. Shaheen Express meets cu
 <BorderCrossingSolutions />
 <AdvantagesSection />
 <AgentPartnerSection />
+<TestimonialLoad />
       </div>
     );
   }

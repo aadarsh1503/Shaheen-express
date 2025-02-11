@@ -33,12 +33,12 @@ const services = [
 
 export default function ShippingServices() {
   return (
-    <div className="grid grid-cols-1 font-roboto-condensed md:grid-cols-4 gap-1 p-6">
+    <div className="grid grid-cols-1 md:grid-cols-4  p-6 justify-center">
       {services.map((service, index) => (
         <a
           key={index}
           href={service.link}
-          className="bg-gradient-to-b from-[#975F5D] to-[#DC7774] hover:bg-gradient-to-b hover:from-[#711e1b] hover:to-[#d4433f] p-6 w-[300px] rounded-lg shadow-md text-white transition-transform transform hover:scale-105 block"
+          className="bg-gradient-to-b from-[#975F5D] to-[#DC7774] hover:bg-gradient-to-b hover:from-[#711e1b] hover:to-[#d4433f] p-6 w-full max-w-[300px] rounded-lg shadow-md text-white transition-transform transform hover:scale-105 block mx-auto"
         >
           <img src={service.image} alt={service.title} className="w-full h-48 object-cover rounded-md" />
           <h2 className="font-bold text-lg mt-4 uppercase">{service.title}</h2>

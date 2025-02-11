@@ -4,6 +4,7 @@ import ServicesSection from "./ServicesSection";
 import Intermodal1 from "./intermodal1";
 import AdvantagesSection from "../Flatbed/AdvantagesSection";
 import AgentPartnerSection from "../Flatbed/AgentPartnerSection";
+import TestimonialInterModal from "./TestimonialInterModal";
 
 
 
@@ -32,7 +33,7 @@ export default function InterModal() {
           </div>
   
           {/* Right Content */}
-          <div className="lg:w-1/ mt-10 lg:mt-0 lg:ml-10 bg-[#F73D38] p-6 rounded-lg shadow-lg text-white">
+          <div className="lg:w-1/ mt-10 lg:mt-0 lg:ml-10 w-[400px] bg-[#F73D38] p-6 rounded-lg shadow-lg text-white">
             <div className="flex items-start">
               <div className="  p-3 rounded-full">
               <div className="rounded-full p-4 bg-[#f8504c]"><FaAngleDoubleRight /></div>
@@ -74,6 +75,7 @@ export default function InterModal() {
 <ServicesSection />
 <AdvantagesSection />
 <AgentPartnerSection />
+<TestimonialInterModal />
       </div>
     );
   }

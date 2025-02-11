@@ -31,56 +31,62 @@ const Footer = () => {
         
         {/* Column 1 */}
         <div>
-          <h3 className="font-bold text-lg border-b border-white pb-2 mb-3">SHIPPERS</h3>
-          <ul className="space-y-1">
-            <li>Truckload</li>
-            <li>Less Than Truckload</li>
-            <li>Intermodal</li>
-            <li>Cross Border</li>
-            <li>Small Parcel</li>
-          </ul>
-          <h3 className="font-bold text-lg border-b border-white pb-2 mt-5 mb-3">FREIGHT SERVICES</h3>
-          <ul className="space-y-1">
-            <li>Flatbed</li>
-            <li>Temperature Controlled</li>
-            <li>Drayage</li>
-            <li>Power Only</li>
-            <li>Box Truck</li>
-          </ul>
-        </div>
+  <h3 class="font-bold text-lg border-b border-white pb-2 mb-3">SHIPPERS</h3>
+  <ul class="space-y-1">
+    <li><a href="/truck-Load" class="hover:underline">Truckload</a></li>
+    <li><a href="/lst" class="hover:underline">Less Than Truckload</a></li>
+    <li><a href="/intermodal" class="hover:underline">Intermodal</a></li>
+    <li><a href="/crossBorder" class="hover:underline">Cross Border</a></li>
+    <li><a href="/smallParcel" class="hover:underline">Small Parcel</a></li>
+  </ul>
+  
+  <h3 class="font-bold text-lg border-b border-white pb-2 mt-5 mb-3">FREIGHT SERVICES</h3>
+  <ul class="space-y-1">
+    <li><a href="/flatbed" class="hover:underline">Flatbed</a></li>
+    <li><a href="/temperature-controlled" class="hover:underline">Temperature Controlled</a></li>
+    <li><a href="/drayage" class="hover:underline">Drayage</a></li>
+    <li><a href="/power-only" class="hover:underline">Power Only</a></li>
+    <li><a href="/box-truck" class="hover:underline">Box Truck</a></li>
+  </ul>
+</div>
 
-        {/* Column 2 */}
-        <div>
-          <h3 className="font-bold text-lg border-b border-white pb-2 mb-3">CARRIERS</h3>
-          <ul className="space-y-1">
-            <li>Load Board</li>
-            <li>Carrier Payment Services</li>
-            <li>Faq’s</li>
-          </ul>
-          <h3 className="font-bold text-lg border-b border-white pb-2 mt-5 mb-3">ADVANTAGES</h3>
-          <ul className="space-y-1">
-            <li>Time Management</li>
-            <li>Financial Stability And Continue Growth</li>
-          </ul>
-          <h3 className="font-bold text-lg border-b border-white pb-2 mt-5 mb-3">RESOURCES</h3>
-          <ul className="space-y-1">
-            <li>Trucking Dispatch Services</li>
-          </ul>
-        </div>
 
-        {/* Column 3 */}
+      
         <div>
-          <h3 className="font-bold text-lg border-b border-white pb-2 mb-3">PLANNING</h3>
-          <ul className="space-y-1">
-            <li>Transportation Optimization</li>
-          </ul>
-          <h3 className="font-bold text-lg border-b border-white pb-2 mt-5 mb-3">NAVIGATION</h3>
-          <ul className="space-y-1">
-            <li>Home</li>
-            <li>Introduction</li>
-            <li>Contact Us</li>
-          </ul>
-        </div>
+  <h3 class="font-bold text-lg border-b border-white pb-2 mb-3">CARRIERS</h3>
+  <ul class="space-y-1">
+    <li><a href="/loadBoard" class="hover:underline">Load Board</a></li>
+    <li><a href="/carrierPayment" class="hover:underline">Carrier Payment Services</a></li>
+    <li><a href="/faq" class="hover:underline">FAQ’s</a></li>
+  </ul>
+
+  <h3 class="font-bold text-lg border-b border-white pb-2 mt-5 mb-3">ADVANTAGES</h3>
+  <ul class="space-y-1">
+    <li><a href="#" class="hover:underline">Time Management</a></li>
+    <li><a href="#" class="hover:underline">Financial Stability And Continued Growth</a></li>
+  </ul>
+
+  <h3 class="font-bold text-lg border-b border-white pb-2 mt-5 mb-3">RESOURCES</h3>
+  <ul class="space-y-1">
+    <li><a href="/trucking-Dispatch" class="hover:underline">Trucking Dispatch Services</a></li>
+  </ul>
+</div>
+
+
+<div>
+  <h3 class="font-bold text-lg border-b border-white pb-2 mb-3">PLANNING</h3>
+  <ul class="space-y-1">
+    <li><a href="/transportation" class="hover:underline">Transportation Optimization</a></li>
+  </ul>
+
+  <h3 class="font-bold text-lg border-b border-white pb-2 mt-5 mb-3">NAVIGATION</h3>
+  <ul class="space-y-1">
+    <li><a href="/" class="hover:underline">Home</a></li>
+    <li><a href="#" class="hover:underline">Introduction</a></li>
+    <li><a href="/contact" class="hover:underline">Contact Us</a></li>
+  </ul>
+</div>
+
 
         {/* Column 4 */}
         <div>

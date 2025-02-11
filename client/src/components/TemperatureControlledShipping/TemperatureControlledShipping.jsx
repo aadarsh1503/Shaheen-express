@@ -20,7 +20,7 @@ export default function TemperatureControlledShipping() {
             <h2 className="text-3xl font-semibold text-blue-900">
               Temperature Controlled <br /> Shipping
             </h2>
-            <p className="mt-4 text-[14px] w-[370px] text-gray-900">
+            <p className="mt-4 text-[18px] w-[370px] text-gray-900">
               Your temperature-sensitive shipment needs a lot of care to protect
               its quality. You can get it by access to the largest network of
               reliable temperature-controlled capacity in the US and Canada. With
@@ -33,12 +33,12 @@ export default function TemperatureControlledShipping() {
           </div>
   
           {/* Right Content */}
-          <div className="lg:w-1/ mt-10 lg:mt-0 lg:ml-10 bg-[#F73D38] p-6 rounded-lg shadow-lg text-white">
+          <div className="lg:w-1/ mt-10 lg:mt-0 lg:ml-10 w-[400px] bg-[#F73D38] p-6 rounded-lg shadow-lg text-white">
             <div className="flex items-start">
               <div className="  p-3 rounded-full">
               <div className="rounded-full p-4 bg-[#f8504c]"><FaAngleDoubleRight /></div>
               </div>
-              <p className="ml-4 text-[14px] w-[220px]">
+              <p className="ml-4 text-[16px] w-[220px]">
                 Now you can access trucks when and where you want them, with a
                 Shaheen Express network of temperature-controlled contract
                 carriers.
@@ -51,7 +51,7 @@ export default function TemperatureControlledShipping() {
               <div className="b bg-opacity-20 p-3 rounded-full">
               <div className="rounded-full p-4 bg-[#f8504c]"><FaAngleDoubleRight /></div>
               </div>
-              <p className="ml-4 text-[14px] w-[220px]">
+              <p className="ml-4 text-[16px] w-[220px]">
                 Shaheen Express are fully reliable and have experience across
                 product shipments that are temperature sensitive.
               </p>
@@ -63,7 +63,7 @@ export default function TemperatureControlledShipping() {
               <div className=" bg-opacity-20 p-3 rounded-full">
               <div className="rounded-full p-4 bg-[#f8504c]"><FaAngleDoubleRight /></div>
               </div>
-              <p className="ml-4 text-[14px] w-[220px]">
+              <p className="ml-4 text-[16px] w-[220px]">
                 You can get efficient services from Shaheen Express staff who are
                 experienced, certified temperature-controlled experts—focused on
                 helping organize your sensitive shipment.

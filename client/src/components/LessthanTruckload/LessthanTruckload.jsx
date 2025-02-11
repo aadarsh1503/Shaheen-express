@@ -3,6 +3,7 @@ import i1 from "./i1.jpg"
 import LtlSolutions from "./LtlSolutions";
 import AdvantagesSection from "../Flatbed/AdvantagesSection";
 import AgentPartnerSection from "../Flatbed/AgentPartnerSection";
+import TestimonialLoad from "../LoadBoard/TestimonialLoad";
 
 
 
@@ -30,7 +31,7 @@ export default function LessthanTruckload() {
           </div>
   
           {/* Right Content */}
-          <div className="lg:w-1/ mt-10 lg:mt-0 lg:ml-10 bg-[#F73D38] p-6 rounded-lg shadow-lg text-white">
+          <div className="lg:w-1/ mt-10 lg:mt-0 lg:ml-10 w-[400px] bg-[#F73D38] p-6 rounded-lg shadow-lg text-white">
             <div className="flex items-start">
               <div className="  p-3 rounded-full">
               <div className="rounded-full p-4 bg-[#f8504c]"><FaAngleDoubleRight /></div>
@@ -69,6 +70,7 @@ export default function LessthanTruckload() {
 <LtlSolutions />
 <AdvantagesSection />
 <AgentPartnerSection />
+<TestimonialLoad />
       </div>
     );
   }

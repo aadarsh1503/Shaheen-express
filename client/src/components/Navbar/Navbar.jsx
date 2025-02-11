@@ -94,68 +94,70 @@ const Navbar = () => {
                   { label: "LESS THAN TRUCKLOAD", path: "/lst" },
                   { label: "INTERMODAL", path: "/intermodal" },
                   { label: "CROSS BORDER", path: "/crossBorder" },
-                  { label: "SMALL PARCEL", path: "/rail" }
+                  { label: "SMALL PARCEL", path: "/smallParcel" }
                 ]
               },
 
-              { label: "CARRIERS", subRoutes: [{ label: "Flatbed", path: "/flatbed" }, { label: "Ocean", path: "/ocean" }, { label: "Air", path: "/air" }, { label: "Rail", path: "/rail" }] },
+              { label: "CARRIERS", subRoutes: [ { label: "Load Board", path: "/loadBoard" }, { label: "Carrier Payment services", path: "/carrierPayment" }, { label: "Faq's", path: "/faq" }] },
 
-              { label: "RESOURCES", subRoutes: [{ label: "Flatbed", path: "/flatbed" }, { label: "Ocean", path: "/ocean" }, { label: "Air", path: "/air" }, { label: "Rail", path: "/rail" }] },
+              { label: "RESOURCES", subRoutes: [{ label: "Trucking Dispatch Services", path: "/trucking-Dispatch" }] },
 
-              { label: "PLANNING", subRoutes: [{ label: "Flatbed", path: "/flatbed" }, { label: "Ocean", path: "/ocean" }, { label: "Air", path: "/air" }, { label: "Rail", path: "/rail" }] },
+              { label: "PLANNING", subRoutes: [{ label: "Transportation Optimization", path: "/transportation" }] },
 
-              { label: "ADVANTAGES", subRoutes: [{ label: "Flatbed", path: "/flatbed" }, { label: "Ocean", path: "/ocean" }, { label: "Air", path: "/air" }, { label: "Rail", path: "/rail" }] }
+              { label: "ADVANTAGES", subRoutes: [{ label: "Flatbed", path: "/flatbed" }, { label: "Ocean", path: "/ocean" }, { label: "Air", path: "/air" }] }
             ].map((menu) => (
               <li key={menu.label} className="relative">
-                <button
-                  onClick={() => toggleDropdown(menu.label)}
-                  className="hover:text-red-500 text-center cursor-pointer flex items-center gap-2"
-                >
-                  {menu.label}
-                  {dropdown === menu.label ? <FaAngleUp /> : <FaAngleDown />}
-                </button>
-                {dropdown === menu.label && (
-                  <ul className="absolute left-0 mt-2 w-72 top-[26px] shadow-custom bg-white rounded-md shadow-lg z-50">
-                    {menu.subRoutes.map((route, index) => (
-                      <li 
-                        key={index} 
-                        className="hover:bg-gray-100 px-4 cursor-pointer p-8 mt-2 py-2 relative group"
-                        onMouseEnter={() => route.label === "FREIGHT SERVICES" && setSubDropdown(route.label)}
-                        onMouseLeave={() => route.label === "FREIGHT SERVICES" && setSubDropdown(null)}
-                      >
-                        {route.subSubRoutes ? (
-                          <>
-                            <button
-                              onClick={() => toggleSubDropdown(route.label)}
-                              className="w-full h-full flex justify-between items-center"
-                            >
-                              {route.label.toUpperCase()}
-                              {route.label === "FREIGHT SERVICES" && <FaAngleRight className="ml-2" />}
-                            </button>
-                            {subDropdown === route.label && (
-                              <ul className="absolute left-full top-0 w-72 bg-white rounded-md shadow-lg z-10">
-                                {route.subSubRoutes.map((subRoute, subIndex) => (
-                                  <li key={subIndex} className="hover:bg-gray-100 px-4 py-2">
-                                    <Link to={subRoute} className="block w-full h-full">
-                                      {subRoute.replace("/", "").toUpperCase()}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
-                          </>
-                        ) : (
-                          <Link to={route.path} className="block w-full h-full">{route.label.toUpperCase()}</Link>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
+  <div
+    onClick={() => toggleDropdown(menu.label)} // Apply onClick to the entire li block
+    className="hover:text-red-500 text-center cursor-pointer flex items-center gap-2"
+  >
+    <button className="flex items-center cursor-pointer gap-2">
+      {menu.label}
+      {dropdown === menu.label ? <FaAngleUp /> : <FaAngleDown />}
+    </button>
+  </div>
+  {dropdown === menu.label && (
+    <ul className="absolute left-0 mt-2 w-72 top-[26px] shadow-custom bg-white rounded-md shadow-lg z-50">
+      {menu.subRoutes.map((route, index) => (
+        <li 
+          key={index} 
+          className="hover:bg-gray-100 px-4 cursor-pointer p-8 mt-2 py-2 relative group"
+          onMouseEnter={() => route.label === "FREIGHT SERVICES" && setSubDropdown(route.label)}
+          onMouseLeave={() => route.label === "FREIGHT SERVICES" && setSubDropdown(null)}
+        >
+          {route.subSubRoutes ? (
+            <>
+              <button
+                onClick={() => toggleSubDropdown(route.label)}
+                className="w-full h-full flex justify-between items-center"
+              >
+                {route.label.toUpperCase()}
+                {route.label === "FREIGHT SERVICES" && <FaAngleRight className="ml-2" />}
+              </button>
+              {subDropdown === route.label && (
+                <ul className="absolute left-full top-0 w-72 bg-white rounded-md shadow-lg z-10">
+                  {route.subSubRoutes.map((subRoute, subIndex) => (
+                    <li key={subIndex} className="hover:bg-gray-100 px-4 py-2">
+                      <Link to={subRoute} className="block w-full h-full">
+                        {subRoute.replace("/", "").toUpperCase()}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </>
+          ) : (
+            <Link to={route.path} className="block w-full h-full">{route.label.toUpperCase()}</Link>
+          )}
+        </li>
+      ))}
+    </ul>
+  )}
+</li>
             ))}
             
             <li className="hover:text-red-500 cursor-pointer">
-              <Link to="/contact-us">CONTACT US</Link>
+              <Link to="/contact">CONTACT US</Link>
             </li>
           </ul>
         </div>

@@ -15,6 +15,13 @@ import TruckLoad from './components/TruckLoad/TruckLoad';
 import LessthanTruckload from './components/LessthanTruckload/LessthanTruckload';
 import InterModal from './components/InterModal/InterModal';
 import CrossBorder from './components/CrossBorder/CrossBorder';
+import SmallParcel from './components/SmallParcel/SmallParcel';
+import LoadBoard from './components/LoadBoard/LoadBoard';
+import Cps from './components/Cps/Cps';
+import TruckingDispatch from './components/TruckingDispatch/TruckingDispatch';
+import TransportationOptimization from './components/TransportationOptimization/TransportationOptimization';
+import ContactSection from './components/ContactSection/ContactSection';
+import FAQGrid from './components/Faq/Faq';
 
 
 function App() {
@@ -35,9 +42,13 @@ function App() {
           <Route path="/lst" element={<LessthanTruckload />} />
           <Route path="/intermodal" element={<InterModal />} />
           <Route path="/crossBorder" element={<CrossBorder />} />
-
-
-
+          <Route path="/smallParcel" element={<SmallParcel />} />
+          <Route path="/loadBoard" element={<LoadBoard />} />
+          <Route path="/carrierPayment" element={<Cps />} />
+          <Route path="/trucking-Dispatch" element={<TruckingDispatch />} />
+          <Route path="/transportation" element={<TransportationOptimization />} />
+          <Route path="/contact" element={<ContactSection />} />
+          <Route path="/faq" element={<FAQGrid />} />
 
         </Routes>
         <Footer />
