@@ -3,20 +3,21 @@ import i1 from "./i1.jpg";
 import i2 from "./i2.png";
 
 const LogisticsNetwork = () => {
-  const [truckScale, setTruckScale] = useState(1); // Default scale (normal size)
-  const [truckPosition, setTruckPosition] = useState(0); // Default horizontal position
-  const [truckShift, setTruckShift] = useState(0); // Extra left shift
-  const [lastScrollY, setLastScrollY] = useState(0); // Track last scroll position
-  const [isVisible, setIsVisible] = useState(false); // Track visibility of square box
+  const [truckScale, setTruckScale] = useState(1);
+  const [truckPosition, setTruckPosition] = useState(0);
+  const [truckShift, setTruckShift] = useState(0);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const [bgSize, setBgSize] = useState(100); // 🔥 Background image zoom percentage
+
   const squareBoxRef = useRef(null);
 
   useEffect(() => {
-    // Intersection Observer to check visibility of square box
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.5 } // Animation starts when at least 50% of the box is visible
+      { threshold: 0.5 }
     );
 
     if (squareBoxRef.current) {
@@ -31,21 +32,26 @@ const LogisticsNetwork = () => {
   }, []);
 
   useEffect(() => {
-    if (!isVisible) return; // Don't animate until box is visible
+    if (!isVisible) return;
 
     const handleScroll = () => {
       let currentScroll = window.scrollY;
 
+      // Truck Animation
       if (currentScroll > lastScrollY) {
-        // Scrolling Down → Truck shrinks & shifts left
-        setTruckScale((prev) => Math.max(0.5, prev - 0.02));
-        setTruckPosition((prev) => Math.max(-50, prev - 1)); // Shift left
-        setTruckShift((prev) => Math.max(-30, prev - 0.5)); // Extra left shift
+        setTruckScale((prev) => Math.max(0.5, prev - 0.015));
+        setTruckPosition((prev) => Math.max(-50, prev - 1));
+        setTruckShift((prev) => Math.max(-30, prev - 0.5));
+
+        // 🔥 Background Zoom In
+        setBgSize((prev) => Math.min(120, prev + 1));
       } else {
-        // Scrolling Up → Truck enlarges & shifts right
         setTruckScale((prev) => Math.min(1.2, prev + 0.02));
-        setTruckPosition((prev) => Math.min(0, prev + 2)); // Shift right
-        setTruckShift((prev) => Math.min(0, prev + 1)); // Reset left shift
+        setTruckPosition((prev) => Math.min(0, prev + 2));
+        setTruckShift((prev) => Math.min(0, prev + 1));
+
+        // 🔥 Background Zoom Out
+        setBgSize((prev) => Math.max(100, prev - 1));
       }
 
       setLastScrollY(currentScroll);
@@ -57,22 +63,28 @@ const LogisticsNetwork = () => {
 
   return (
     <section
-      className="relative w-full font-roboto-condensed h-[1100px] flex items-center  justify-between px-12 bg-cover bg-center"
-      style={{ backgroundImage: `url(${i1})` }}
+      className="relative w-full font-roboto-condensed h-[700px] flex items-center justify-between px-12 bg-cover bg-center transition-all duration-300"
+      style={{
+        backgroundImage: `url(${i1})`,
+        backgroundSize: `${bgSize}%`, // 🔥 Background Zoom Effect
+        backgroundRepeat: "no-repeat", // ✅ Fix: Image will not repeat
+      }}
     >
       {/* Left Side Text */}
       <div className="w-1/2 relative bottom-16 left-12">
-        <h2 className="text-4xl font-bold text-red-500 uppercase">
+        <h2 className="text-4xl font-bold text-Red uppercase">
           What Exactly Does <br />
-          <span className="text-red-500">Shaheen Express Do?</span>
+          <span className="text-Red">Shaheen Express Do?</span>
         </h2>
         <p className="text-lg font-bold text-white mt-3">
           We thrive in solving most intricate to basic problems <br />
           across the Logistics network.
         </p>
-        <button className="mt-4 px-6 py-3 w-[200px] font-bold bg-red-400 text-white rounded-full shadow-lg hover:bg-red-500 transition">
+        <a href="/contact">
+        <button className="mt-4 px-6 py-3 w-[200px] cursor-pointer font-bold bg-Red text-white rounded-full shadow-lg hover:bg-red-500 transition">
           Start now
         </button>
+        </a>
       </div>
 
       {/* Right Side Square Box */}
@@ -87,9 +99,7 @@ const LogisticsNetwork = () => {
         <img
           src={i2}
           alt="Truck"
-          className={`absolute w-[340px] right-56 top-28 object-cover transition-transform duration-300 ${
-            isVisible ? "opacity-100" : "opacity-100"
-          }`}
+          className="absolute w-[340px] right-56 top-28 object-cover transition-transform duration-300"
           style={{
             transform: `scale(${truckScale}) translateX(${truckPosition + truckShift}px)`,
           }}

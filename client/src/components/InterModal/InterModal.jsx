@@ -27,9 +27,11 @@ export default function InterModal() {
             'Shaheen Express' Intermodal services provide you with the most up-to-date options and control over your supply chain. We have a wealth of experience and resources to supplement and frequently improve your current strategy.
 
             </p>
-            <button className="mt-6 bg-Red text-white px-6 py-3 font-semibold rounded-md">
+            <a href="/contact">
+            <button className="mt-6 cursor-pointer bg-Red text-white px-6 py-3 font-semibold rounded-md">
               CONNECT WITH AN EXPERT
             </button>
+            </a>
           </div>
   
           {/* Right Content */}

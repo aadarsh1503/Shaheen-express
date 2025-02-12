@@ -26,9 +26,11 @@ export default function TransportationOptimization() {
             Optimization of transportation is one of the topmost crucial parts of a logistic service that helps in providing the best and fast transportation service at a very low cost. This is the reason that we have focused very much on the optimization part of our transportation services.
 
             </p>
-            <button className="mt-6 bg-Red text-white px-6 py-3 font-semibold rounded-md">
+            <a href="/contact">
+            <button className="mt-6 cursor-pointer bg-Red text-white px-6 py-3 font-semibold rounded-md">
               CONNECT WITH AN EXPERT
             </button>
+            </a>
           </div>
   
           {/* Right Content */}

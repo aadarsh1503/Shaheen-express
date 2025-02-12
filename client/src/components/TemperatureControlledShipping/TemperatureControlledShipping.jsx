@@ -27,9 +27,11 @@ export default function TemperatureControlledShipping() {
               Shaheen Express, experts leverage core carrier relationships based
               on your products arriving safely, and on time.
             </p>
-            <button className="mt-6 bg-red-500 text-white px-6 py-3 font-semibold rounded-md">
+            <a href="/contact">
+            <button className="mt-6 cursor-pointer bg-Red text-white px-6 py-3 font-semibold rounded-md">
               CONNECT WITH AN EXPERT
             </button>
+            </a>
           </div>
   
           {/* Right Content */}

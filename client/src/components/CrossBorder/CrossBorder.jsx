@@ -27,9 +27,11 @@ export default function CrossBorder() {
             Logistics makes over-the-road cross-border shipping easier with the help of Pamm. Trust our experienced staff to understand traffic flows, customs regulations, and border processes at major border-crossing locations when you're crossing one or more borders.
 
             </p>
-            <button className="mt-6 bg-Red text-white px-6 py-3 font-semibold rounded-md">
+            <a href="/contact">
+            <button className="mt-6 cursor-pointer bg-Red text-white px-6 py-3 font-semibold rounded-md">
               CONNECT WITH AN EXPERT
             </button>
+            </a>
           </div>
   
           {/* Right Content */}

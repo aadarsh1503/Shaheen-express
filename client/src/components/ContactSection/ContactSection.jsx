@@ -17,20 +17,29 @@ const ContactSection = () => {
         </div>
         {/* Email */}
         <div className="flex items-start gap-4 border-b pb-4">
-          <AiOutlineMail className="text-Red text-5xl" />
-          <div>
-            <h3 className="text-Blue text-2xl mb-4 font-semibold">Email</h3>
-            <p className="text-gray-600 mb-2">hello@alshaheenexpress.com</p>
-          </div>
-        </div>
-        {/* Phone */}
-        <div className="flex items-start gap-4">
-          <AiOutlinePhone className="text-Red shrink-0 text-5xl" />
-          <div>
-            <h3 className="text-Blue text-2xl font-semibold">Phone</h3>
-            <p className="text-gray-600 mb-4">+973 1330 3301, +973 3334 0017, +973 3311 7441</p>
-          </div>
-        </div>
+  <AiOutlineMail className="text-Red text-5xl" />
+  <div>
+    <h3 className="text-Blue text-2xl mb-4 font-semibold">Email</h3>
+    <p className="text-gray-600 mb-2">
+      <a href="mailto:hello@alshaheenexpress.com" className="hover:underline text-gray-600">
+        hello@alshaheenexpress.com
+      </a>
+    </p>
+  </div>
+</div>
+{/* Phone */}
+<div className="flex items-start gap-4">
+  <AiOutlinePhone className="text-Red shrink-0 text-5xl" />
+  <div>
+    <h3 className="text-Blue text-2xl font-semibold">Phone</h3>
+    <p className="text-gray-600 mb-4">
+      <a href="tel:+97313303301" className="hover:underline text-gray-600">+973 1330 3301</a>, 
+      <a href="tel:+97333340017" className="hover:underline text-gray-600"> +973 3334 0017</a>, 
+      <a href="tel:+97333117441" className="hover:underline text-gray-600"> +973 3311 7441</a>
+    </p>
+  </div>
+</div>
+
       </div>
 
       {/* Right Section */}

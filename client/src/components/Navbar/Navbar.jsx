@@ -10,12 +10,17 @@ const Navbar = () => {
   const location = useLocation(); // Track route changes
 
   const toggleDropdown = (menu) => {
-    setDropdown(dropdown === menu ? null : menu);
-    setSubDropdown(null);
+    setDropdown(prev => prev === menu ? null : menu);  // Using a functional update for setDropdown
+    setSubDropdown(null);  // Reset sub-dropdown when a new main dropdown is toggled
   };
-
+  
   const toggleSubDropdown = (submenu) => {
-    setSubDropdown(subDropdown === submenu ? null : submenu);
+    setSubDropdown(prev => prev === submenu ? null : submenu); // Same here for subDropdown
+  };
+  
+  const handleToggleIcon = (menu) => {
+    setDropdown(prev => (prev === menu ? null : menu)); // Toggle dropdown on icon click
+    setSubDropdown(null); // Reset sub-dropdown
   };
 
   useEffect(() => {
@@ -66,8 +71,12 @@ const Navbar = () => {
           </span>
           <div className="mx-2 h-4 border-l border-gray-400"></div>
           <span className="flex items-center">
-            <FaHeadphones className="text-gray-600 mr-1" /> +973 1330 3301
-          </span>
+  <FaHeadphones className="text-gray-600 mr-1" />
+  <a href="tel:+97313303301" className="text-gray-600 hover:underline">
+    +973 1330 3301
+  </a>
+</span>
+
         </div>
       </div>
 
@@ -75,7 +84,7 @@ const Navbar = () => {
       <nav ref={navRef} className="w-full font-noto-sans-display font-medium items-center bg-white">
         <div className="mx-auto px-4">
           <ul className="flex space-x-24 ml-14 py-3 text-[14px] text-gray-900 tracking-wide relative">
-            <li className="hover:text-red-500 items-center cursor-pointer">
+            <li className="hover:text-Red items-center cursor-pointer">
               <Link to="/">HOME</Link>
             </li>
             
@@ -104,18 +113,20 @@ const Navbar = () => {
 
               { label: "PLANNING", subRoutes: [{ label: "Transportation Optimization", path: "/transportation" }] },
 
-              { label: "ADVANTAGES", subRoutes: [{ label: "Flatbed", path: "/flatbed" }, { label: "Ocean", path: "/ocean" }, { label: "Air", path: "/air" }] }
+              { label: "ADVANTAGES", subRoutes: [{ label: "Time Management", path: "/timeManagement" }, { label: "Financial Stability and continue Growth", path: "/financialStability" }] }
             ].map((menu) => (
-              <li key={menu.label} className="relative">
-  <div
-    onClick={() => toggleDropdown(menu.label)} // Apply onClick to the entire li block
-    className="hover:text-red-500 text-center cursor-pointer flex items-center gap-2"
-  >
-    <button className="flex items-center cursor-pointer gap-2">
-      {menu.label}
+<li key={menu.label} className="relative">
+<div
+  onClick={() => toggleDropdown(menu.label)} // Text click opens/closes dropdown
+  className="hover:text-Red text-center cursor-pointer flex items-center gap-2"
+>
+  <button className="flex items-center cursor-pointer gap-2">
+    {menu.label}
+    <span className="cursor-pointer" onClick={(e) => { e.stopPropagation(); handleToggleIcon(menu.label); }}>
       {dropdown === menu.label ? <FaAngleUp /> : <FaAngleDown />}
-    </button>
-  </div>
+    </span>
+  </button>
+</div>
   {dropdown === menu.label && (
     <ul className="absolute left-0 mt-2 w-72 top-[26px] shadow-custom bg-white rounded-md shadow-lg z-50">
       {menu.subRoutes.map((route, index) => (
@@ -154,9 +165,10 @@ const Navbar = () => {
     </ul>
   )}
 </li>
+            
             ))}
             
-            <li className="hover:text-red-500 cursor-pointer">
+            <li className="hover:text-Red cursor-pointer">
               <Link to="/contact">CONTACT US</Link>
             </li>
           </ul>

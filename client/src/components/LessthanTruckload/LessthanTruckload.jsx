@@ -25,9 +25,11 @@ export default function LessthanTruckload() {
             With the growth of ecommerce, less truckload shipping necessitates greater flexibility than ever before. We will assist you in determining the best combination of LTL services to achieve efficiencies while exceeding customer expectations.
 
             </p>
-            <button className="mt-6 bg-Red text-white px-6 py-3 font-semibold rounded-md">
+            <a href="/contact">
+            <button className="mt-6 cursor-pointer bg-Red text-white px-6 py-3 font-semibold rounded-md">
               CONNECT WITH AN EXPERT
             </button>
+            </a>
           </div>
   
           {/* Right Content */}

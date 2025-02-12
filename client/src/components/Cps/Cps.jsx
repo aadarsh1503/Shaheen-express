@@ -27,9 +27,11 @@ export default function Cps() {
 
             </p>
             <p className=" mt-4 text-[16px] w-[500px] text-gray-900">﻿To start or apply for The payment cycle or process, upload your documentation of the load work. We give you several convenient options to submit your Paperwork. You're requested to choose only the options which work for you.</p>
-            <button className="mt-6 bg-Red text-white px-6 py-3 font-semibold rounded-md">
+            <a href="/contact">
+            <button className="mt-6 cursor-pointer bg-Red text-white px-6 py-3 font-semibold rounded-md">
               CONNECT WITH AN EXPERT
             </button>
+            </a>
           </div>
   
           {/* Right Content */}

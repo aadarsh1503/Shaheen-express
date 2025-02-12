@@ -25,7 +25,7 @@ const TestimonialInterModal = () => {
         >
           <p className="text-gray-600 text-[16px] ">"{testimonial.text}"</p>
           <div className="flex items-center mt-4">
-            <div className="w-12 h-12 bg-red-500 flex items-center justify-center rounded-full text-white text-xl">
+            <div className="w-12 h-12 bg-Red flex items-center justify-center rounded-full text-white text-xl">
               <FaUser />
             </div>
             <div className="ml-4">

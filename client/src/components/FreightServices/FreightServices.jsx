@@ -34,7 +34,7 @@ const FreightServices = () => {
       </div>
 
       {/* Drayage */}
-      <div className=" p-6 text-red-500 relative">
+      <div className=" p-6 text-Red relative">
   {/* Text Content */}
   <div className="relative max-w-[80%] p-2 right-6 bottom-6 bg-white z-10"> {/* z-10 ensures text stays above the image */}
     <h2 className="font-bold uppercase">Drayage</h2>
@@ -54,7 +54,7 @@ const FreightServices = () => {
 </div>
 
       {/* Flatbed Trucking */}
-      <div className="bg-white bottom-4 text-red-500 relative">
+      <div className="bg-white bottom-4 text-Red relative">
   {/* Text Content */}
   <div className="relative max-w-[70%] p-2 right-0 bg-white z-10"> {/* z-10 ensures text stays above the image */}
     <h2 className="font-bold uppercase">Drayage</h2>

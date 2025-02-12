@@ -9,7 +9,7 @@ const FAQGrid = () => {
   return (
     <div className="bg-[#EEF0F2]">
     <div className="grid grid-cols-2 max-w-7xl mx-auto  font-noto-serif md:grid-cols-3  p-4">
-    <div className="bg-purple-800"></div>
+    <div className="bg-[#BBDA00]"></div>
       
       {/* Fifth Box */}
       <div className="bg-white h-[500px] p-6 ">
@@ -31,7 +31,7 @@ const FAQGrid = () => {
       </div>
       
       {/* Sixth Box (Colored Background) */}
-      <div className="bg-yellow-400"></div>
+      <div className="bg-[#D60021]"></div>
 
       {/* First Box */}
       <div className="bg-white p-6 ">
@@ -59,7 +59,7 @@ const FAQGrid = () => {
       </div>
       
       {/* Fourth Box (Colored Background) */}
-      <div className="bg-purple-800"></div>
+      <div className="bg-[#542865]"></div>
       
       {/* Fifth Box */}
       <div className="bg-white h-[400px] p-16 ">
@@ -110,7 +110,7 @@ What paperwork is needed to submit for receiving a payment?
       </div>
       
       {/* Fourth Box (Colored Background) */}
-      <div className="bg-purple-800"></div>
+      <div className="bg-[#BBDA00]"></div>
       
       {/* Fifth Box */}
       <div className="bg-white h-[400px] p-16 ">
@@ -124,7 +124,7 @@ How can I check my payment status?
       </div>
       
       {/* Sixth Box (Colored Background) */}
-      <div className="bg-yellow-400"></div>
+      <div className="bg-[#D60021]"></div>
 
 
 
@@ -156,7 +156,7 @@ Is there any quick pay option available?
       </div>
       
       {/* Fourth Box (Colored Background) */}
-      <div className="bg-purple-800"></div>
+      <div className="bg-[#542865]"></div>
       
       {/* Fifth Box */}
       <div className="bg-white h-[400px] p-6 ">
@@ -169,7 +169,7 @@ Is there any quick pay option available?
       </div>
       
       {/* Sixth Box (Colored Background) */}
-      <div className="bg-yellow-400"></div>
+      <div className="bg-[#F6C11B]"></div>
 
 
 
@@ -204,7 +204,7 @@ Is there any quick pay option available?
       </div>
       
       {/* Fourth Box (Colored Background) */}
-      <div className="bg-purple-800"></div>
+      <div className="bg-[#BBDA00]"></div>
       
       {/* Fifth Box */}
       <div className="bg-white h-[400px] p-6 ">
@@ -218,9 +218,9 @@ How can I search and book any loads?
       </div>
       
       {/* Sixth Box (Colored Background) */}
-      <div className="bg-yellow-400"></div>
+      <div className="bg-[#D60021]"></div>
 
-
+ 
 
       <div className="bg-white p-6 ">
         <h2 className="text-2xl mb-6 font-bold text-Blue">
@@ -252,7 +252,7 @@ Is there any way to contact you, if I face any error while using your applicatio
       </div>
       
       {/* Fourth Box (Colored Background) */}
-      <div className="bg-purple-800"></div>
+      <div className="bg-[#542865]"></div>
       
       {/* Fifth Box */}
       <div className="bg-white h-[400px] p-6 ">
@@ -267,7 +267,7 @@ Is there any way to contact you, if I face any error while using your applicatio
       </div>
       
       {/* Sixth Box (Colored Background) */}
-      <div className="bg-yellow-400"></div>
+      <div className="bg-[#F6C11B]"></div>
 
 
 

@@ -27,9 +27,11 @@ export default function TruckLoad() {
             <p className="mt-4 text-[18px] w-[500px] text-gray-900">
             Now you can strengthen your supply chain with the strength of our business and credible truckload capacity in all markets. Shaheen Express has experts for full truckload freight (FTL).
             </p>
-            <button className="mt-6 bg-red-500 text-white px-6 py-3 font-semibold rounded-md">
+            <a href="/contact">
+            <button className="mt-6 cursor-pointer bg-Red text-white px-6 py-3 font-semibold rounded-md">
               CONNECT WITH AN EXPERT
             </button>
+            </a>
           </div>
   
           {/* Right Content */}

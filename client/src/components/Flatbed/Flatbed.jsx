@@ -26,9 +26,11 @@ export default function FlatbedShipping() {
             className="rounded-lg shadow-lg w-full"
           />
         </div>
-        <button className="mt-6 bg-red-500 text-white px-6 py-3 rounded-md font-semibold uppercase">
-          Connect with an Expert
-        </button>
+        <a href="/contact">
+            <button className="mt-6 cursor-pointer bg-Red text-white px-6 py-3 font-semibold rounded-md">
+              CONNECT WITH AN EXPERT
+            </button>
+            </a>
       </div>
 
       {/* Right Section */}
@@ -38,7 +40,7 @@ export default function FlatbedShipping() {
           "Visit the Shaheen Express freight services experts and the climate of the logistics industry will be considerable. Moreover, we do provide efficient services to our clients."]
           .map((text, index) => (
             <div key={index} className=" bg-white cursor-pointer hover:text-black text-black hover:bg-[#c8342c] shadow-lg flex items-start space-x-4 p-10  rounded-lg">
-              <div className="w-10 h-10 flex items-center top-3 relative shrink-0 justify-center bg-red-500 text-white rounded-full text-">
+              <div className="w-10 h-10 flex items-center top-3 relative shrink-0 justify-center bg-Red text-white rounded-full text-">
                 <FaAngleDoubleRight />
               </div>
               <p className=" w-[200px]  relative left-2 top-3 ">{text}</p>

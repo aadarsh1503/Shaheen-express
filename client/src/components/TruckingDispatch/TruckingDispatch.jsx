@@ -31,9 +31,11 @@ const TruckingDispatch = () => {
           <p className="text-gray-600 mt-4">
           Do you need trucking and dispatch services to load and deliver your products on time? Then we have a vast array of trucking and dispatch services available to you. Because we have simplified our trucking and dispatch services, you can rely on us. so that we can bridge the gap between you and your customers.
           </p>
-          <button className="mt-6 bg-red-500 text-white py-2 px-6 rounded-lg shadow-md hover:bg-red-600 transition">
+          <a href="/contact">
+          <button className="mt-6 cursor-pointer bg-Red text-white py-2 px-6 rounded-lg shadow-md hover:bg-red-600 transition">
             CONTACT US
           </button>
+          </a>
         </div>
       </div>
     </div>

@@ -22,6 +22,9 @@ import TruckingDispatch from './components/TruckingDispatch/TruckingDispatch';
 import TransportationOptimization from './components/TransportationOptimization/TransportationOptimization';
 import ContactSection from './components/ContactSection/ContactSection';
 import FAQGrid from './components/Faq/Faq';
+import TimeManagement from './components/TimeManagement/TimeManagement';
+import FinancialStability from './components/FinancialStability/FinancialStability';
+import Introduction from './components/Introduction/Introduction';
 
 
 function App() {
@@ -49,6 +52,11 @@ function App() {
           <Route path="/transportation" element={<TransportationOptimization />} />
           <Route path="/contact" element={<ContactSection />} />
           <Route path="/faq" element={<FAQGrid />} />
+          <Route path="/timeManagement" element={<TimeManagement />} />
+          <Route path="/financialStability" element={<FinancialStability />} />
+          <Route path="/introduction" element={<Introduction />} />
+
+
 
         </Routes>
         <Footer />
@@ -57,4 +65,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 

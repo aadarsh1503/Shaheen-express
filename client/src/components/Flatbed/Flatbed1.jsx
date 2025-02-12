@@ -4,7 +4,7 @@ const Flatbed1 = () => {
   return (
     <div className="relative flex items-center font-noto-sans-display bg-white w-full min-h-[400px]">
       {/* Red Background on the Left */}
-      <div className="absolute left-0 top-0 h-full w-1/3 bg-red-500"></div>
+      <div className="absolute left-0 top-0 h-full w-1/3 bg-Red"></div>
 
       {/* Content Section */}
       <div className="relative z-10 flex w-full top-[18px] max-w-6xl mx-auto">
@@ -29,9 +29,11 @@ const Flatbed1 = () => {
             Shaheen Express are ready to provide you with the best services with
             great expertise.
           </p>
-          <button className="mt-6 bg-red-500 text-white py-2 px-6 rounded-lg shadow-md hover:bg-red-600 transition">
+          <a href="/contact">
+          <button className="mt-6 bg-Red text-white py-2 px-6 rounded-lg shadow-md hover:bg-red-600 transition">
             CONTACT US
           </button>
+          </a>
         </div>
       </div>
     </div>

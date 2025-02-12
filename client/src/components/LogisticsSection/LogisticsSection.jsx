@@ -13,7 +13,7 @@ const LogisticsSection = () => {
             We are here to help you figure out and prospect in logistics service together
           </p>
           <a 
-            href="#introduction" 
+            href="/introduction" 
             className="text-[#343a40] z-50 hover:text-[#550000] cursor-pointer outline p-4 outline-[#343a40] font-semibold hover:underline relative"
           >
             INTRODUCTION+

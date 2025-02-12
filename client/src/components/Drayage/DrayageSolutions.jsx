@@ -14,7 +14,7 @@ export default function DrayageSolutions() {
 
         {/* Drayage Procurement */}
         <div className="mt-6 flex gap-3">
-          <FaAngleDoubleRight className="text-red-500 shrink-0" size={28} />
+          <FaAngleDoubleRight className="text-Red shrink-0" size={28} />
           <div>
             <h3 className="text-lg font-semibold text-Blue">Drayage Procurement</h3>
             <p className="text-gray-700 text-[14px] mt-2">
@@ -27,7 +27,7 @@ export default function DrayageSolutions() {
 
         {/* Chassis Pool Program */}
         <div className="mt-6 flex gap-3">
-          <FaAngleDoubleRight className="text-red-500 shrink-0" size={28} />
+          <FaAngleDoubleRight className="text-Red shrink-0" size={28} />
           <div>
             <h3 className="text-lg font-semibold text-Blue">Chassis Pool Program</h3>
             <p className="text-gray-700 text-[14px] mt-2">

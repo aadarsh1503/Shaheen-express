@@ -67,7 +67,7 @@ export default function Hero() {
                       initial={{ scale: 0.5, rotate: -15, opacity: 0 }}
                       animate={{ scale: 1, rotate: 0, opacity: 1 }}
                       transition={{ duration: 0.7, delay: 0.3, ease: "backOut" }}
-                      className="bg-red-500 text-[110px] w-fit inline-block px-3 py-1 leading-none whitespace-nowrap shadow-2xl"
+                      className="bg-Red text-[110px] w-fit inline-block px-3 py-1 leading-none whitespace-nowrap shadow-2xl"
                     >
                       {image.text.split(" ")[0]} {image.text.split(" ")[1] || ""}
                     </motion.div>

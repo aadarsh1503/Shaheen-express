@@ -25,9 +25,11 @@ export default function Load1() {
             We have a lot more freight than ever before on our load board. Moreover, are free to book any load. We have more freight available on the load boards than ever before and can book the loads with our Shaheen Express carrier, including short-haul, cross-border, temperature-controlled, and so on, right away. Our app is available for 24hr for use whenever and wherever required.
 
             </p>
-            <button className="mt-6 bg-Red text-white px-6 py-3 font-semibold rounded-md">
+            <a href="/contact">
+            <button className="mt-6 cursor-pointer bg-Red text-white px-6 py-3 font-semibold rounded-md">
               CONNECT WITH AN EXPERT
             </button>
+            </a>
           </div>
   
           {/* Right Content */}

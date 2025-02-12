@@ -27,9 +27,11 @@ export default function SmallParcel() {
             When small parcel shipments are required and the customers expectations are higher than ever, than a provider like Shaheen Express can boost your efficiency without breaking the bank. Allow our vast network and cutting-edge supply chain technology to work for you.
 
             </p>
-            <button className="mt-6 bg-Red text-white px-6 py-3 font-semibold rounded-md">
+            <a href="/contact">
+            <button className="mt-6 cursor-pointer bg-Red text-white px-6 py-3 font-semibold rounded-md">
               CONNECT WITH AN EXPERT
             </button>
+            </a>
           </div>
   
           {/* Right Content */}
