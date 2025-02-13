@@ -4,23 +4,22 @@ import i2 from "./i2.png";
 
 const LogisticsNetwork = () => {
   const [truckScale, setTruckScale] = useState(1);
-  const [truckPosition, setTruckPosition] = useState(0);
   const [truckShift, setTruckShift] = useState(0);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [truckTilt, setTruckTilt] = useState(0);
+  const [lastScrollY, setLastScrollY] = useState(window.scrollY);
   const [isVisible, setIsVisible] = useState(false);
   const [bgSize, setBgSize] = useState(100);
 
   const squareBoxRef = useRef(null);
-  const scrollTimeout = useRef(null);
-
-  const MIN_TRUCK_SCALE = 0.96;
+  const MIN_TRUCK_SCALE = 0.8;
+  const MAX_TRUCK_SCALE = 1.4;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
     if (squareBoxRef.current) {
@@ -43,25 +42,22 @@ const LogisticsNetwork = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           let currentScroll = window.scrollY;
-          let scrollSpeed = Math.abs(currentScroll - lastScrollY) / 10; 
-          let speedFactor = Math.min(1, scrollSpeed / 5);
+          let scrollDiff = currentScroll - lastScrollY;
+          let speedFactor = Math.abs(scrollDiff) / 50;
 
           if (currentScroll > lastScrollY) {
-          
-            setTruckScale((prev) => Math.max(MIN_TRUCK_SCALE, prev - 0.03 * speedFactor)); 
-            setTruckPosition((prev) => Math.max(-20, prev - 0.5 * speedFactor));
-            setTruckShift((prev) => Math.max(-70, prev - 0.9 * speedFactor)); 
-        
-            setBgSize((prev) => Math.min(420, prev + 1.2 * speedFactor)); 
-        } else {
-           
-            setTruckScale((prev) => Math.min(3.2, prev + 0.0234 * speedFactor)); 
-            setTruckPosition((prev) => Math.min(0, prev + 0.8 * speedFactor)); 
-            setTruckShift((prev) => Math.min(70, prev + 0.9 * speedFactor));
-        
-            setBgSize((prev) => Math.max(100, prev - 1.2 * speedFactor)); 
-        }
-        
+            // Scroll Down (Truck Shrinks, Moves Away, Slight Tilt)
+            setTruckScale((prev) => Math.max(MIN_TRUCK_SCALE, prev - 0.02 * speedFactor));
+            setTruckShift((prev) => Math.max(-70, prev - 2 * speedFactor));
+            setTruckTilt((prev) => Math.max(-10, prev - 18 * speedFactor));
+            setBgSize((prev) => Math.min(120, prev + 0.8 * speedFactor));
+          } else {
+            // Scroll Up (Truck Enlarges, Moves Forward, Tilt Back)
+            setTruckScale((prev) => Math.min(MAX_TRUCK_SCALE, prev + 0.02 * speedFactor));
+            setTruckShift((prev) => Math.min(70, prev + 2 * speedFactor));
+            setTruckTilt((prev) => Math.min(5, prev + 1 * speedFactor));
+            setBgSize((prev) => Math.max(100, prev - 0.8 * speedFactor));
+          }
 
           setLastScrollY(currentScroll);
           ticking = false;
@@ -76,12 +72,10 @@ const LogisticsNetwork = () => {
   }, [lastScrollY, isVisible]);
 
   return (
-    <section
-      className="relative w-full font-roboto-condensed h-[1100px] flex overflow-hidden items-center justify-between px-12 bg-cover bg-center transition-all duration-500 ease-out"
-    >
+    <section className="relative w-full h-[1100px] flex overflow-hidden items-center justify-between px-12 bg-cover bg-center transition-all duration-500 ease-out">
       <img
         src={i1}
-        alt="Background Image"
+        alt="Background"
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out"
         style={{ transform: `scale(${bgSize / 100})` }}
       />
@@ -105,20 +99,16 @@ const LogisticsNetwork = () => {
 
       {/* Right Side Square Box */}
       <div className="w-1/2">
-        <div
-          ref={squareBoxRef}
-          className="relative w-[530px] h-[500px] flex justify-center items-center"
-        >
-          {/* Square Border (Fixed Positioning) */}
+        <div ref={squareBoxRef} className="relative w-[530px] h-[500px] flex justify-center items-center">
           <div className="absolute w-full h-full border-[20px] border-[#032843] left-[9%]"></div>
 
-          {/* Truck Image (Fixed Positioning + Zoom) */}
+          {/* Truck Image with 3D Effect */}
           <img
             src={i2}
             alt="Truck"
-            className="absolute w-[340px] right-[14%] top-[25%] object-cover transition-transform duration-500 ease-out"
+            className="absolute w-[400px] left-[20%] top-[25%] object-cover transition-transform duration-500 ease-out"
             style={{
-              transform: `scale(${truckScale}) translateX(${truckShift}px)`,
+              transform: `perspective(1000px) scale(${truckScale}) translateX(${truckShift}px) rotateY(${truckTilt}deg)`,
             }}
           />
         </div>
