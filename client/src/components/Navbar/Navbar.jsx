@@ -9,18 +9,17 @@ const Navbar = () => {
   const navRef = useRef(null);
   const location = useLocation(); // Track route changes
 
-  const toggleDropdown = (menu) => {
-    setDropdown(prev => prev === menu ? null : menu);  // Using a functional update for setDropdown
-    setSubDropdown(null);  // Reset sub-dropdown when a new main dropdown is toggled
+  const handleDropdownHover = (menu) => {
+    setDropdown(menu);
   };
-  
-  const toggleSubDropdown = (submenu) => {
-    setSubDropdown(prev => prev === submenu ? null : submenu); // Same here for subDropdown
+
+  const handleSubDropdownHover = (submenu) => {
+    setSubDropdown(submenu);
   };
-  
-  const handleToggleIcon = (menu) => {
-    setDropdown(prev => (prev === menu ? null : menu)); // Toggle dropdown on icon click
-    setSubDropdown(null); // Reset sub-dropdown
+
+  const handleDropdownLeave = () => {
+    setDropdown(null);
+    setSubDropdown(null);
   };
 
   useEffect(() => {
@@ -71,12 +70,11 @@ const Navbar = () => {
           </span>
           <div className="mx-2 h-4 border-l border-gray-400"></div>
           <span className="flex items-center">
-  <FaHeadphones className="text-gray-600 mr-1" />
-  <a href="tel:+97313303301" className="text-gray-600 hover:underline">
-    +973 1330 3301
-  </a>
-</span>
-
+            <FaHeadphones className="text-gray-600 mr-1" />
+            <a href="tel:+97313303301" className="text-gray-600 hover:underline">
+              +973 1330 3301
+            </a>
+          </span>
         </div>
       </div>
 
@@ -84,7 +82,7 @@ const Navbar = () => {
       <nav ref={navRef} className="w-full font-noto-sans-display font-medium items-center bg-white">
         <div className="mx-auto px-4">
           <ul className="flex space-x-24 ml-14 py-3 text-[14px] text-gray-900 tracking-wide relative">
-            <li className="hover:text-Red items-center cursor-pointer">
+            <li className="hover:text-Red items-center mt-[7px] cursor-pointer">
               <Link to="/">HOME</Link>
             </li>
             
@@ -115,60 +113,60 @@ const Navbar = () => {
 
               { label: "ADVANTAGES", subRoutes: [{ label: "Time Management", path: "/timeManagement" }, { label: "Financial Stability and continue Growth", path: "/financialStability" }] }
             ].map((menu) => (
-<li key={menu.label} className="relative">
-<div
-  onClick={() => toggleDropdown(menu.label)} // Text click opens/closes dropdown
-  className="hover:text-Red text-center cursor-pointer flex items-center gap-2"
->
-  <button className="flex items-center cursor-pointer gap-2">
-    {menu.label}
-    <span className="cursor-pointer" onClick={(e) => { e.stopPropagation(); handleToggleIcon(menu.label); }}>
-      {dropdown === menu.label ? <FaAngleUp /> : <FaAngleDown />}
-    </span>
-  </button>
-</div>
-  {dropdown === menu.label && (
-    <ul className="absolute left-0 mt-2 w-72 top-[26px] shadow-custom bg-white rounded-md shadow-lg z-50">
-      {menu.subRoutes.map((route, index) => (
-        <li 
-          key={index} 
-          className="hover:bg-gray-100 px-4 cursor-pointer p-8 mt-2 py-2 relative group"
-          onMouseEnter={() => route.label === "FREIGHT SERVICES" && setSubDropdown(route.label)}
-          onMouseLeave={() => route.label === "FREIGHT SERVICES" && setSubDropdown(null)}
-        >
-          {route.subSubRoutes ? (
-            <>
-              <button
-                onClick={() => toggleSubDropdown(route.label)}
-                className="w-full h-full flex justify-between items-center"
+              <li 
+                key={menu.label} 
+                className="relative"
+                onMouseEnter={() => handleDropdownHover(menu.label)}
+                onMouseLeave={handleDropdownLeave}
               >
-                {route.label.toUpperCase()}
-                {route.label === "FREIGHT SERVICES" && <FaAngleRight className="ml-2" />}
-              </button>
-              {subDropdown === route.label && (
-                <ul className="absolute left-full top-0 w-72 bg-white rounded-md shadow-lg z-10">
-                  {route.subSubRoutes.map((subRoute, subIndex) => (
-                    <li key={subIndex} className="hover:bg-gray-100 px-4 py-2">
-                      <Link to={subRoute} className="block w-full h-full">
-                        {subRoute.replace("/", "").toUpperCase()}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </>
-          ) : (
-            <Link to={route.path} className="block w-full h-full">{route.label.toUpperCase()}</Link>
-          )}
-        </li>
-      ))}
-    </ul>
-  )}
-</li>
-            
+                <div className="hover:text-Red text-center cursor-pointer flex items-center gap-2">
+                  <button className="flex items-center cursor-pointer gap-2">
+                    {menu.label}
+                    <span className="cursor-pointer py-2">
+                      {dropdown === menu.label ? <FaAngleUp /> : <FaAngleDown />}
+                    </span>
+                  </button>
+                </div>
+                {dropdown === menu.label && (
+                  <ul className="absolute left-0 mt-2 w-72 top-[20px]  bg-white shadow-lg rounded-md  z-50">
+                    {menu.subRoutes.map((route, index) => (
+                      <li 
+                        key={index} 
+                        className="hover:bg-gray-100 rounded-md px-4 cursor-pointer p-8 mt-2 py-2 relative group"
+                        onMouseEnter={() => route.label === "FREIGHT SERVICES" && handleSubDropdownHover(route.label)}
+                        onMouseLeave={() => route.label === "FREIGHT SERVICES" && setSubDropdown(null)}
+                      >
+                        {route.subSubRoutes ? (
+                          <>
+                            <button
+                              className="w-full h-full flex justify-between items-center"
+                            >
+                              {route.label.toUpperCase()}
+                              {route.label === "FREIGHT SERVICES" && <FaAngleRight className="ml-2" />}
+                            </button>
+                            {subDropdown === route.label && (
+                              <ul className="absolute left-full top-0 w-72 bg-white rounded-md shadow-lg z-10">
+                                {route.subSubRoutes.map((subRoute, subIndex) => (
+                                  <li key={subIndex} className="hover:bg-gray-100 px-4 py-2">
+                                    <Link to={subRoute} className="block w-full h-full">
+                                      {subRoute.replace("/", "").toUpperCase()}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </>
+                        ) : (
+                          <Link to={route.path} className="block w-full h-full">{route.label.toUpperCase()}</Link>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
             ))}
             
-            <li className="hover:text-Red cursor-pointer">
+            <li className="hover:text-Red p-1 cursor-pointer">
               <Link to="/contact">CONTACT US</Link>
             </li>
           </ul>
