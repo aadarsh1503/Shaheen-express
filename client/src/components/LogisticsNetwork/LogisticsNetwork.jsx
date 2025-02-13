@@ -8,11 +8,12 @@ const LogisticsNetwork = () => {
   const [truckShift, setTruckShift] = useState(0);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const [bgSize, setBgSize] = useState(100); // 🔥 Background image zoom percentage
+  const [bgSize, setBgSize] = useState(100);
 
   const squareBoxRef = useRef(null);
+  const scrollTimeout = useRef(null);
 
-  const MIN_TRUCK_SCALE = 0.96; // Set the minimum scale for the truck image
+  const MIN_TRUCK_SCALE = 0.96;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,27 +37,38 @@ const LogisticsNetwork = () => {
   useEffect(() => {
     if (!isVisible) return;
 
+    let ticking = false;
+
     const handleScroll = () => {
-      let currentScroll = window.scrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          let currentScroll = window.scrollY;
+          let scrollSpeed = Math.abs(currentScroll - lastScrollY) / 10; 
+          let speedFactor = Math.min(1, scrollSpeed / 5);
 
-      // Truck Animation
-      if (currentScroll > lastScrollY) {
-        setTruckScale((prev) => Math.max(MIN_TRUCK_SCALE, prev - 0.015)); // Ensure it doesn't go below MIN_TRUCK_SCALE
-        setTruckPosition((prev) => Math.max(-10, prev - 1));
-        setTruckShift((prev) => Math.max(-10, prev - 0.5));
+          if (currentScroll > lastScrollY) {
+          
+            setTruckScale((prev) => Math.max(MIN_TRUCK_SCALE, prev - 0.03 * speedFactor)); 
+            setTruckPosition((prev) => Math.max(-20, prev - 0.5 * speedFactor));
+            setTruckShift((prev) => Math.max(-70, prev - 0.9 * speedFactor)); 
+        
+            setBgSize((prev) => Math.min(420, prev + 1.2 * speedFactor)); 
+        } else {
+           
+            setTruckScale((prev) => Math.min(3.2, prev + 0.0234 * speedFactor)); 
+            setTruckPosition((prev) => Math.min(0, prev + 0.8 * speedFactor)); 
+            setTruckShift((prev) => Math.min(70, prev + 0.9 * speedFactor));
+        
+            setBgSize((prev) => Math.max(100, prev - 1.2 * speedFactor)); 
+        }
+        
 
-        // 🔥 Background Zoom In
-        setBgSize((prev) => Math.min(120, prev + 1));
-      } else {
-        setTruckScale((prev) => Math.min(1.2, prev + 0.02));
-        setTruckPosition((prev) => Math.min(0, prev + 2));
-        setTruckShift((prev) => Math.min(0, prev + 1));
+          setLastScrollY(currentScroll);
+          ticking = false;
+        });
 
-        // 🔥 Background Zoom Out
-        setBgSize((prev) => Math.max(100, prev - 1));
+        ticking = true;
       }
-
-      setLastScrollY(currentScroll);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -65,13 +77,13 @@ const LogisticsNetwork = () => {
 
   return (
     <section
-      className="relative w-full font-roboto-condensed h-[800px] flex overflow-hidden items-center justify-between px-12 bg-cover bg-center transition-all duration-300"
+      className="relative w-full font-roboto-condensed h-[1100px] flex overflow-hidden items-center justify-between px-12 bg-cover bg-center transition-all duration-500 ease-out"
     >
-      <img 
-        src={i1} 
-        alt="Background Image" 
-        className="absolute inset-0 w-full h-full object-cover transition-all duration-300"
-        style={{ transform: `scale(${bgSize / 100})` }} // 🔥 Background Zoom Effect
+      <img
+        src={i1}
+        alt="Background Image"
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out"
+        style={{ transform: `scale(${bgSize / 100})` }}
       />
 
       {/* Left Side Text */}
@@ -104,7 +116,7 @@ const LogisticsNetwork = () => {
           <img
             src={i2}
             alt="Truck"
-            className="absolute w-[340px] right-[14%] top-[25%] object-cover transition-transform duration-300"
+            className="absolute w-[340px] right-[14%] top-[25%] object-cover transition-transform duration-500 ease-out"
             style={{
               transform: `scale(${truckScale}) translateX(${truckShift}px)`,
             }}
