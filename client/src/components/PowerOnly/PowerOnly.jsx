@@ -16,7 +16,7 @@ export default function PowerOnly() {
       {/* Dark Overlay for better contrast */}
       <div className="absolute inset-0  bg-opacity-0"></div>
       {/* Content */}
-      <div className="relative z-10 max-w-2xl">
+      <div className=" max-w-2/3 flex-shrink-0">
         <h2 className="text-3xl font-semibold text-Blue">
         Power Only</h2>
         <p className="text-black mt-4">
@@ -24,7 +24,7 @@ export default function PowerOnly() {
         </p>
         <p className="text-black mt-6">When you don't have a driver or a truck, power is primarily used for local supplies. You needed to hire those vehicles in this situation, & Shaheen Express will provide you with those vehicles at a reasonable price.</p>
         <div className="mt-6">
-          <img src={i2} alt="Flatbed Shipping" className="rounded-lg shadow-lg w-full" />
+          <img src={i2} alt="Flatbed Shipping" className="rounded-lg shadow-lg w-[800px]" />
         </div>
         <a href="/contact">
             <button className="mt-6 cursor-pointer bg-Red text-white px-6 py-3 font-semibold rounded-md">

@@ -20,8 +20,8 @@ const ContactSection = () => {
   <AiOutlineMail className="text-Red text-5xl" />
   <div>
     <h3 className="text-Blue text-2xl mb-4 font-semibold">Email</h3>
-    <p className="text-gray-600 mb-2">
-      <a href="mailto:hello@alshaheenexpress.com" className="hover:underline text-gray-600">
+      <p className="text-[#73777F] mb-2">
+      <a href="mailto:hello@alshaheenexpress.com" className="hover:underline text-[#73777F]">
         hello@alshaheenexpress.com
       </a>
     </p>

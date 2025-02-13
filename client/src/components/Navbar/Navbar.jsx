@@ -54,7 +54,7 @@ const Navbar = () => {
   return (
     <header className="w-full border-b font-roboto-condensed border-gray-200">
       {/* Top Section */}
-      <div className="container mx-auto px-4 flex justify-between items-center py-2">
+      <div className="container mx-auto px-4 max-w-7xl flex justify-between items-center py-2">
         {/* Logo */}
         <div className="flex items-center relative right-12">
           <img

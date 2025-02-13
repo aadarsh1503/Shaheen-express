@@ -17,7 +17,7 @@ export default function Load1() {
         {/* Content Container */}
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center w-full">
           {/* Left Content */}
-          <div className="lg:w-1/2 relative left- text-left  text-white">
+          <div className="lg:w-1/2 relative left-10 text-left  text-white">
             <h2 className="text-4xl font-semibold text-Blue ">
             Book your loads instantly and save your time
             </h2>
@@ -33,7 +33,7 @@ export default function Load1() {
           </div>
   
           {/* Right Content */}
-          <div className="lg:w-1/ mt-10 lg:mt-0 lg:ml-10 bg-[#F73D38] p-6 rounded-lg shadow-lg text-white">
+          <div className="lg:w-1/ mt-10 lg:mt-0 lg:ml-38 bg-[#F73D38] p-6 rounded-lg shadow-lg text-white">
             <div className="flex mt-4 items-start">
               <div className="  p-3 rounded-full">
               <div className="rounded-full p-4 bg-[#f8504c]"><FaAngleDoubleRight /></div>

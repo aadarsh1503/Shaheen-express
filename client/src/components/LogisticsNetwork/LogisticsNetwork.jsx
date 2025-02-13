@@ -39,8 +39,8 @@ const LogisticsNetwork = () => {
 
       // Truck Animation
       if (currentScroll > lastScrollY) {
-        setTruckScale((prev) => Math.max(0.5, prev - 0.015));
-        setTruckPosition((prev) => Math.max(-50, prev - 1));
+        setTruckScale((prev) => Math.max(0.1, prev - 0.015));
+        setTruckPosition((prev) => Math.max(-210, prev - 1));
         setTruckShift((prev) => Math.max(-30, prev - 0.5));
 
         // 🔥 Background Zoom In
@@ -62,14 +62,17 @@ const LogisticsNetwork = () => {
   }, [lastScrollY, isVisible]);
 
   return (
-    <section
-      className="relative w-full font-roboto-condensed h-[700px] flex items-center justify-between px-12 bg-cover bg-center transition-all duration-300"
-      style={{
-        backgroundImage: `url(${i1})`,
-        backgroundSize: `${bgSize}%`, // 🔥 Background Zoom Effect
-        backgroundRepeat: "no-repeat", // ✅ Fix: Image will not repeat
-      }}
-    >
+<section
+  className="relative w-full font-roboto-condensed h-[800px] flex overflow-hidden items-center justify-between px-12 bg-cover bg-center transition-all duration-300"
+>
+  <img 
+    src={i1} 
+    alt="Background Image" 
+    className="absolute inset-0 w-full h-full object-cover transition-all duration-300"
+    style={{ transform: `scale(${bgSize / 100})` }} // 🔥 Background Zoom Effect
+  />
+
+
       {/* Left Side Text */}
       <div className="w-1/2 relative bottom-16 left-12">
         <h2 className="text-4xl font-bold text-Red uppercase">
@@ -88,23 +91,25 @@ const LogisticsNetwork = () => {
       </div>
 
       {/* Right Side Square Box */}
+      <div className="w-1/2">
       <div
-        ref={squareBoxRef}
-        className="relative w-[530px] h-[500px] flex justify-center items-center"
-      >
-        {/* Square Border */}
-        <div className="absolute w-full h-full border-[20px] right-[80px] border-[#032843]"></div>
+  ref={squareBoxRef}
+  className="relative w-[530px]  h-[500px] flex justify-center items-center"
+>
+  {/* Square Border (Fixed Positioning) */}
+  <div className="absolute w-full h-full border-[20px] border-[#032843] left-[9%]"></div>
 
-        {/* Truck Image with Zoom & Left Shift Effect */}
-        <img
-          src={i2}
-          alt="Truck"
-          className="absolute w-[340px] right-56 top-28 object-cover transition-transform duration-300"
-          style={{
-            transform: `scale(${truckScale}) translateX(${truckPosition + truckShift}px)`,
-          }}
-        />
-      </div>
+  {/* Truck Image (Fixed Positioning + Zoom) */}
+  <img
+    src={i2}
+    alt="Truck"
+    className="absolute w-[340px] right-[14%] top-[25%] object-cover transition-transform duration-300"
+    style={{
+      transform: `scale(${truckScale}) translateX(${truckShift}px)`,
+    }}
+  />
+</div>
+</div>
     </section>
   );
 };

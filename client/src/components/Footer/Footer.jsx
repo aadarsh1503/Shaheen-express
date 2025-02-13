@@ -110,7 +110,7 @@ const Footer = () => {
         <div>
           <h3 className="font-bold text-lg border-b border-white pb-2 mb-3">OFFICE</h3>
           <p className="leading-6">
-            📍 Flat 22, Building 661, Block 712, Road 1208, P.O Box 54121, Manama, Kingdom of Bahrain
+             Flat 22, Building 661, Block 712, Road 1208, P.O Box 54121, Manama, Kingdom of Bahrain
           </p>
           <h3 className="font-bold text-lg border-b border-white pb-2 mt-5 mb-3">REACH US</h3>
           <p className="flex items-center gap-2">

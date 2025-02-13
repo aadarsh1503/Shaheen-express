@@ -1,13 +1,14 @@
 import React from "react";
-
+import i1 from "./i1.webp"
+import i3 from "./i3.png"
 const TransportSection = () => {
   return (
     <div className="bg-gray-100 font-noto-sans-display py-16 px-6 md:px-20">
       <div className="max-w-6xl mx-auto grid grid-cols-1 gap-16">
         {/* First Item */}
-        <div className="flex flex-col relative left-20 md:flex-row items-center md:items-start gap-6">
+        <div className="flex flex-col relative md:flex-row items-center md:items-start gap-6">
           <img
-            src="https://cdn-ikpihmb.nitrocdn.com/EVOnYHexWCWaTbduzsnDKqKfLFeDfoGa/assets/images/optimized/rev-9016df0/www.pammlogistics.llc/wp-content/uploads/brizy/imgs/slider13-637x348x0x0x637x348x1649389946.jpg"
+            src={i1}
             alt="Flatbed Truck"
             className="w-full md:w-1/2 h-auto rounded-lg"
           />
@@ -33,9 +34,9 @@ const TransportSection = () => {
             </p>
           </div>
           <img
-            src="https://shaheen-express.mubashir-rehman.com/wp-content/themes/shaheenExpress/assets/Images/Group%20of%20trucks%20parked%20in%20line%20at%20truck%20stop.png"
+            src={i3}
             alt="Hot Shot Trucks"
-            className="w-full md:w-1/2 relative right-12 h-auto rounded-lg"
+            className="w-full md:w-1/2 relative  h-auto rounded-lg"
           />
         </div>
       </div>

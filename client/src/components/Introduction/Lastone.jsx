@@ -1,9 +1,9 @@
 import { FaArrowRight } from "react-icons/fa";
-import i1 from "./i1.webp"
-import i2 from "./i2.webp"
-import i3 from "./i3.webp"
-import i4 from "./i4.jpg"
-import i5 from "./i5.jpg"
+import i21 from "./i21.jpg"
+import i22 from "./i22.webp"
+import i23 from "./i23.jpg"
+import i24 from "./i24.webp"
+import i25 from "./i25.jpg"
 
 const Lastone = () => {
   return (
@@ -18,27 +18,27 @@ const Lastone = () => {
 
         {/* Remaining images */}
         <img
-          src={i1}
+          src={i21}
           alt="Office 2"
           className="rounded-md shadow-lg w-full h-48 object-cover"
         />
         <img
-          src={i2}
+          src={i22}
           alt="Office 3"
           className="rounded-md shadow-lg w-full h-48 object-cover"
         />
         <img
-          src={i3}
+          src={i23}
           alt="Office 4"
           className="rounded-md shadow-lg w-full h-48 object-cover"
         />
         <img
-          src={i4}
+          src={i24}
           alt="Office 5"
           className="rounded-md shadow-lg w-full h-48 object-cover"
         />
         <img
-          src={i5}
+          src={i25}
           alt="Office 6"
           className="rounded-md shadow-lg w-full h-48 object-cover"
         />

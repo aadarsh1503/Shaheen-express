@@ -6,7 +6,7 @@ const Middle = () => {
     <div className="bg-gray-100 font-noto-sans-display py-16 px-6 md:px-20">
       <div className="max-w-6xl mx-auto grid grid-cols-1 gap-16">
         {/* First Item */}
-        <div className="flex flex-col relative left-20 md:flex-row items-center md:items-start gap-6">
+        <div className="flex flex-col relative  md:flex-row items-center md:items-start gap-6">
           <img
             src={i3}
             alt="Flatbed Truck"
@@ -31,7 +31,7 @@ const Middle = () => {
           <img
             src={i4}
             alt="Hot Shot Trucks"
-            className="w-full md:w-1/2 relative right-12 h-auto rounded-lg"
+            className="w-full md:w-1/2 relative  h-auto rounded-lg"
           />
         </div>
       </div>

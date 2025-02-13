@@ -11,7 +11,7 @@ const testimonials = [
     name: "Akhter Ali",
     location: "East Riffa, Bahrain",
     image: "https://via.placeholder.com/50", // Replace with actual image
-    text: "They (Shaheen Express ) can make your supply chain very strong and fast. they are absolutely amazing in terms of technology, experience, and human capital. we can recommend you to use Shaheen Express services.‘"
+    text: "They (Shaheen Express ) can make your supply chain very strong and fast. they are absolutely amazing in terms of technology, experience, and human capital. we can recommend you to use Shaheen Express services."
   }
 ];
 

@@ -6,7 +6,7 @@ const Middle1 = () => {
     <div className="bg-gray-100 font-noto-sans-display py-16 px-6 md:px-20">
       <div className="max-w-6xl mx-auto grid grid-cols-1 gap-16">
         {/* First Item */}
-        <div className="flex flex-col relative left-20 md:flex-row items-center md:items-start gap-6">
+        <div className="flex flex-col relative  md:flex-row items-center md:items-start gap-6">
           <img
             src={i3}
             alt="Flatbed Truck"
@@ -22,16 +22,16 @@ const Middle1 = () => {
 
         {/* Second Item */}
         <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-          <div className="md:w-1/2 relative  left-44">
+          <div className="md:w-1/2 relative  left-32">
             <h2 className="text-xl font-semibold mb-6 text-[#264795]">Grow your business continuously <br />with our Services</h2>
-            <p className="text-gray-600 mt-2 w-[300px]">
+            <p className="text-gray-600 mt-2 w-[390px]">
             By Taking our logistic services, you will be able to provide the best and fast delivery or shipment services to your customers and once your customers feel satisfied with your services then absolutely it will lead you to grow your business continuously. and when your business will grow it is obvious that, it helps you to achieve financial stability in your business.
             </p>
           </div>
           <img
             src={i4}
             alt="Hot Shot Trucks"
-            className="w-full md:w-1/2 relative right-12 h-auto rounded-lg"
+            className="w-full md:w-1/2 relative  h-auto rounded-lg"
           />
         </div>
       </div>

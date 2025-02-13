@@ -5,13 +5,13 @@ const testimonials = [
     name: "Asman",
     location: "Afaf, Dammam",
     image: "https://via.placeholder.com/50", // Replace with actual image
-    text: "‘‘I Don’t think that any other logistic service provider company will be able to provide the experience and technologies that Shaheen Express provides. I love and appreciate their services always. you can choose their services as they will not make you upset with their services.’’‘."
+    text: "I Don’t think that any other logistic service provider company will be able to provide the experience and technologies that Shaheen Express provides. I love and appreciate their services always. you can choose their services as they will not make you upset with their services."
   },
   {
     name: "Faysal Ghuari ",
     location: "Philadelphia, Pennsylvania",
     image: "https://via.placeholder.com/50", // Replace with actual image
-    text: "‘‘Not even a single complaint about Shaheen Express services. They are just an amazing logistic service provider than is gonna help you a lot in your business if you are want to hire them for your logistic or process.’’‘"
+    text: "Not even a single complaint about Shaheen Express services. They are just an amazing logistic service provider than is gonna help you a lot in your business if you are want to hire them for your logistic or process."
   }
 ];
 

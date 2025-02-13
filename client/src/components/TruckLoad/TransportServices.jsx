@@ -45,7 +45,7 @@ export default function TransportServices() {
             <img src={service.image} alt={service.title} className="w-full h-48 object-cover" />
             <div className="p-4">
               <h3 className="text-lg font-bold italic text-Blue">{service.title}</h3>
-              <p className="text-gray-700 mt-2 text-sm italic">{service.description}</p>
+              <p className="text-black mt-2 text-sm italic">{service.description}</p>
             </div>
           </div>
         ))}

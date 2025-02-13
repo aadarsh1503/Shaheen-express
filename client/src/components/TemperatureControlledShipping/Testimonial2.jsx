@@ -5,7 +5,7 @@ const testimonials = [
     name: "Asman",
     location: "Afaf, Dammam",
     image: "https://via.placeholder.com/50", // Replace with actual image
-    text: "‘‘I Don’t think that any other logistic service provider company will be able to provide the experience and technologies that Shaheen Express provides. I love and appreciate their services always. you can choose their services as they will not make you upset with their services.’’‘"
+    text: "I Don’t think that any other logistic service provider company will be able to provide the experience and technologies that Shaheen Express provides. I love and appreciate their services always. you can choose their services as they will not make you upset with their services."
   },
   {
     name: "Faysal Ghuari",
