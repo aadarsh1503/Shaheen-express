@@ -12,6 +12,8 @@ const LogisticsNetwork = () => {
 
   const squareBoxRef = useRef(null);
 
+  const MIN_TRUCK_SCALE = 0.96; // Set the minimum scale for the truck image
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -39,9 +41,9 @@ const LogisticsNetwork = () => {
 
       // Truck Animation
       if (currentScroll > lastScrollY) {
-        setTruckScale((prev) => Math.max(0.1, prev - 0.015));
-        setTruckPosition((prev) => Math.max(-210, prev - 1));
-        setTruckShift((prev) => Math.max(-30, prev - 0.5));
+        setTruckScale((prev) => Math.max(MIN_TRUCK_SCALE, prev - 0.015)); // Ensure it doesn't go below MIN_TRUCK_SCALE
+        setTruckPosition((prev) => Math.max(-10, prev - 1));
+        setTruckShift((prev) => Math.max(-10, prev - 0.5));
 
         // 🔥 Background Zoom In
         setBgSize((prev) => Math.min(120, prev + 1));
@@ -62,16 +64,15 @@ const LogisticsNetwork = () => {
   }, [lastScrollY, isVisible]);
 
   return (
-<section
-  className="relative w-full font-roboto-condensed h-[800px] flex overflow-hidden items-center justify-between px-12 bg-cover bg-center transition-all duration-300"
->
-  <img 
-    src={i1} 
-    alt="Background Image" 
-    className="absolute inset-0 w-full h-full object-cover transition-all duration-300"
-    style={{ transform: `scale(${bgSize / 100})` }} // 🔥 Background Zoom Effect
-  />
-
+    <section
+      className="relative w-full font-roboto-condensed h-[800px] flex overflow-hidden items-center justify-between px-12 bg-cover bg-center transition-all duration-300"
+    >
+      <img 
+        src={i1} 
+        alt="Background Image" 
+        className="absolute inset-0 w-full h-full object-cover transition-all duration-300"
+        style={{ transform: `scale(${bgSize / 100})` }} // 🔥 Background Zoom Effect
+      />
 
       {/* Left Side Text */}
       <div className="w-1/2 relative bottom-16 left-12">
@@ -84,32 +85,32 @@ const LogisticsNetwork = () => {
           across the Logistics network.
         </p>
         <a href="/contact">
-        <button className="mt-4 px-6 py-3 w-[200px] cursor-pointer font-bold bg-Red text-white rounded-full shadow-lg hover:bg-red-500 transition">
-          Start now
-        </button>
+          <button className="mt-4 px-6 py-3 w-[200px] cursor-pointer font-bold bg-Red text-white rounded-full shadow-lg hover:bg-red-500 transition">
+            Start now
+          </button>
         </a>
       </div>
 
       {/* Right Side Square Box */}
       <div className="w-1/2">
-      <div
-  ref={squareBoxRef}
-  className="relative w-[530px]  h-[500px] flex justify-center items-center"
->
-  {/* Square Border (Fixed Positioning) */}
-  <div className="absolute w-full h-full border-[20px] border-[#032843] left-[9%]"></div>
+        <div
+          ref={squareBoxRef}
+          className="relative w-[530px] h-[500px] flex justify-center items-center"
+        >
+          {/* Square Border (Fixed Positioning) */}
+          <div className="absolute w-full h-full border-[20px] border-[#032843] left-[9%]"></div>
 
-  {/* Truck Image (Fixed Positioning + Zoom) */}
-  <img
-    src={i2}
-    alt="Truck"
-    className="absolute w-[340px] right-[14%] top-[25%] object-cover transition-transform duration-300"
-    style={{
-      transform: `scale(${truckScale}) translateX(${truckShift}px)`,
-    }}
-  />
-</div>
-</div>
+          {/* Truck Image (Fixed Positioning + Zoom) */}
+          <img
+            src={i2}
+            alt="Truck"
+            className="absolute w-[340px] right-[14%] top-[25%] object-cover transition-transform duration-300"
+            style={{
+              transform: `scale(${truckScale}) translateX(${truckShift}px)`,
+            }}
+          />
+        </div>
+      </div>
     </section>
   );
 };
