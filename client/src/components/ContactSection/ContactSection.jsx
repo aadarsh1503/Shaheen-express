@@ -1,7 +1,10 @@
 import { AiOutlineEnvironment, AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
+import AdvantagesSection from "../Flatbed/AdvantagesSection";
+import AgentPartnerSection from "../Flatbed/AgentPartnerSection";
 
 const ContactSection = () => {
   return (
+    <div>
     <div className="bg-[#F0F1F3]  font-montserrat py-10 px-5 lg:px-20 flex flex-col lg:flex-row gap-10">
       {/* Left Section */}
       <div className="flex flex-col gap-8 mt-10 max-w-xl mx-auto w-full lg:w-[300px]">
@@ -21,7 +24,7 @@ const ContactSection = () => {
   <div>
     <h3 className="text-Blue text-2xl mb-4 font-semibold">Email</h3>
       <p className="text-[#73777F] mb-2">
-      <a href="mailto:hello@alshaheenexpress.com" className="hover:underline text-[#73777F]">
+      <a href="mailto:hello@alshaheenexpress.com" className="hover:underline font-noto-serif text-[#73777F]">
         hello@alshaheenexpress.com
       </a>
     </p>
@@ -32,7 +35,7 @@ const ContactSection = () => {
   <AiOutlinePhone className="text-Red shrink-0 text-5xl" />
   <div>
     <h3 className="text-Blue text-2xl font-semibold">Phone</h3>
-    <p className="text-gray-600 mb-4">
+    <p className="text-gray-600 font-noto-serif mb-4">
       <a href="tel:+97313303301" className="hover:underline text-gray-600">+973 1330 3301</a>, 
       <a href="tel:+97333340017" className="hover:underline text-gray-600"> +973 3334 0017</a>, 
       <a href="tel:+97333117441" className="hover:underline text-gray-600"> +973 3311 7441</a>
@@ -43,7 +46,7 @@ const ContactSection = () => {
       </div>
 
       {/* Right Section */}
-      <div className="w-full lg:w-1/2 p-8 mt-10 rounded flex flex-col items-start"> 
+      <div className="w-full lg:w-1/2 p-8 font-noto-serif mt-10 rounded flex flex-col items-start"> 
         <input
           type="text"
           placeholder="Name"
@@ -62,6 +65,9 @@ const ContactSection = () => {
           SUBMIT
         </button>
       </div>
+    </div>
+    <AdvantagesSection />
+    <AgentPartnerSection />
     </div>
   );
 };

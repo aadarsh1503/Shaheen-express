@@ -35,41 +35,51 @@ const LogisticsNetwork = () => {
 
   useEffect(() => {
     if (!isVisible) return;
-
+  
     let ticking = false;
-
+  
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           let currentScroll = window.scrollY;
           let scrollDiff = currentScroll - lastScrollY;
-          let speedFactor = Math.abs(scrollDiff) / 50;
-
+          let speedFactor = Math.min(1, Math.abs(scrollDiff) / 100); // Smooth speed control
+  
+          const lerp = (start, end, factor) => start + (end - start) * factor; // Smooth transition function
+  
           if (currentScroll > lastScrollY) {
-            // Scroll Down (Truck Shrinks, Moves Away, Slight Tilt)
-            setTruckScale((prev) => Math.max(MIN_TRUCK_SCALE, prev - 0.02 * speedFactor));
-            setTruckShift((prev) => Math.max(-70, prev - 2 * speedFactor));
-            setTruckTilt((prev) => Math.max(-10, prev - 18 * speedFactor));
-            setBgSize((prev) => Math.min(120, prev + 0.8 * speedFactor));
+            // Scroll Down (Shrink Truck & Increase BG)
+            setTruckScale((prev) => lerp(prev, MIN_TRUCK_SCALE, speedFactor * 0.1));
+            setBgSize((prev) => lerp(prev, 120, speedFactor * 0.1)); // BG zoom in smoothly
           } else {
-            // Scroll Up (Truck Enlarges, Moves Forward, Tilt Back)
-            setTruckScale((prev) => Math.min(MAX_TRUCK_SCALE, prev + 0.02 * speedFactor));
-            setTruckShift((prev) => Math.min(70, prev + 2 * speedFactor));
-            setTruckTilt((prev) => Math.min(5, prev + 1 * speedFactor));
-            setBgSize((prev) => Math.max(100, prev - 0.8 * speedFactor));
+            // Scroll Up (Enlarge Truck & Reset BG)
+            setTruckScale((prev) => lerp(prev, MAX_TRUCK_SCALE, speedFactor * 0.1));
+            setBgSize((prev) => lerp(prev, 100, speedFactor * 0.1)); // BG reset smoothly
           }
-
+  
           setLastScrollY(currentScroll);
           ticking = false;
         });
-
+  
         ticking = true;
       }
     };
-
+  
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY, isVisible]);
+  const handleMouseMove = (e) => {
+  const { clientX, clientY } = e;
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
+
+  const rotateY = ((clientX - centerX) / centerX) * 20; // Left-Right movement
+  const rotateX = ((clientY - centerY) / centerY) * -20; // Up-Down movement
+
+  setTruckTilt(rotateY);
+  setTruckShift(rotateX);
+};
+  
 
   return (
     <section className="relative w-full h-[1100px] flex overflow-hidden items-center justify-between px-12 bg-cover bg-center transition-all duration-500 ease-out">
