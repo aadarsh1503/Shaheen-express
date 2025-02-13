@@ -6,34 +6,34 @@ const services = [
     description:
       "When the shipper owns the trailer that needs to be transported but does not have any trucks vacant then there is the requirement for power only shipping, the truck and driver...",
     image: "https://shaheen-express.mubashir-rehman.com/wp-content/themes/shaheenExpress/assets/Images/A%20red%20truck%20driving%20on%20a%20road%20with%20mountains%20in%20the%20background.png",
-    link: "/",
+    link: "/power-only",
   },
   {
     title: "Box Truck",
     description:
       "Shaheen Express provides you services of Heavy Haulers, we understand the importance of your box truck to your business. That’s the only reason when it comes to boxing truck transport...",
     image: "https://shaheen-express.mubashir-rehman.com/wp-content/themes/shaheenExpress/assets/Images/con-air.png",
-    link: "/",
+    link: "/box-truck",
   },
   {
     title: "Cross Border",
     description:
       "With the help of Shaheen Express, logistics facilitate your over-the-road cross-border shipping. When you’re crossing one or multiple borders, trust our experienced...",
     image: "https://shaheen-express.mubashir-rehman.com/wp-content/themes/shaheenExpress/assets/Images/con1.png",
-    link: "/",
+    link: "/crossBorder",
   },
   {
     title: "Small Parcel",
     description:
       "When you want small parcels shipments and consumers’ expectations are higher than ever so, your business needs a provider like Shaheen Express that...",
     image: "https://shaheen-express.mubashir-rehman.com/wp-content/themes/shaheenExpress/assets/Images/box.png",
-    link: "/",
+    link: "/smallParcel",
   },
 ];
 
 export default function ShippingServices() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4  p-6 justify-center">
+    <div className="grid grid-cols-1 md:grid-cols-4 -gap-32 p-6 justify-center">
       {services.map((service, index) => (
         <a
           key={index}
