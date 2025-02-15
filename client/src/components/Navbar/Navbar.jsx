@@ -66,7 +66,7 @@ const Navbar = () => {
         {/* Address & Contact */}
         <div className="flex items-center font-noto-sans-display justify-center text-[14px] leading-loose text-gray-800">
           <span className="text-center">
-            FLAT 22, BUILDING 661, BLOCK 712, ROAD 1208, P.O BOX 54121, MANAMA, KINGDOM OF BAHRAIN
+            FLAT 22, BUILDING 661, BLOCK 712, ROAD 1208, MANAMA, KINGDOM OF BAHRAIN
           </span>
           <div className="mx-2 h-4 border-l border-gray-400"></div>
           <span className="flex items-center">
