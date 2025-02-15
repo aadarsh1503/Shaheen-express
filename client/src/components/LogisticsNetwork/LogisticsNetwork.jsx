@@ -4,8 +4,7 @@ import i2 from "./i2.png";
 
 const LogisticsNetwork = () => {
   const [truckScale, setTruckScale] = useState(1);
-  const [truckShift, setTruckShift] = useState(0);
-  const [truckTilt, setTruckTilt] = useState(0);
+  const [truckMoveY, setTruckMoveY] = useState(0);
   const [lastScrollY, setLastScrollY] = useState(window.scrollY);
   const [isVisible, setIsVisible] = useState(false);
   const [bgSize, setBgSize] = useState(100);
@@ -13,6 +12,9 @@ const LogisticsNetwork = () => {
   const squareBoxRef = useRef(null);
   const MIN_TRUCK_SCALE = 0.8;
   const MAX_TRUCK_SCALE = 1.4;
+  const SCROLL_THRESHOLD = 300;
+  const MIN_BG_SCALE = 100;
+  const MAX_BG_SCALE = 140;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,54 +37,56 @@ const LogisticsNetwork = () => {
 
   useEffect(() => {
     if (!isVisible) return;
-  
+
     let ticking = false;
-  
+
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           let currentScroll = window.scrollY;
           let scrollDiff = currentScroll - lastScrollY;
-          let speedFactor = Math.min(1, Math.abs(scrollDiff) / 100); // Smooth speed control
-  
-          const lerp = (start, end, factor) => start + (end - start) * factor; // Smooth transition function
-  
+          let speedFactor = Math.min(1, Math.abs(scrollDiff) / 100);
+
+          const lerp = (start, end, factor) =>
+            start + (end - start) * factor;
+
           if (currentScroll > lastScrollY) {
-            // Scroll Down (Shrink Truck & Increase BG)
-            setTruckScale((prev) => lerp(prev, MIN_TRUCK_SCALE, speedFactor * 0.1));
-            setBgSize((prev) => lerp(prev, 120, speedFactor * 0.1)); // BG zoom in smoothly
+            // Scroll Down
+            if (currentScroll < SCROLL_THRESHOLD) {
+              setTruckScale((prev) => lerp(prev, MIN_TRUCK_SCALE, speedFactor * 0.1));
+              setTruckMoveY((prev) => lerp(prev, -50, speedFactor * 0.01));
+              setBgSize((prev) => lerp(prev, MAX_BG_SCALE, speedFactor * 10.9));
+            } else {
+              setTruckScale((prev) => lerp(prev, MIN_TRUCK_SCALE, speedFactor * 0.3));
+              setTruckMoveY((prev) => lerp(prev, -100, speedFactor * 0.3));
+              setBgSize((prev) => lerp(prev, MAX_BG_SCALE, speedFactor * 0.3));
+            }
           } else {
-            // Scroll Up (Enlarge Truck & Reset BG)
-            setTruckScale((prev) => lerp(prev, MAX_TRUCK_SCALE, speedFactor * 0.1));
-            setBgSize((prev) => lerp(prev, 100, speedFactor * 0.1)); // BG reset smoothly
+            // Scroll Up
+            if (currentScroll < SCROLL_THRESHOLD) {
+              setTruckScale((prev) => lerp(prev, MAX_TRUCK_SCALE, speedFactor * 0.1));
+              setTruckMoveY((prev) => lerp(prev, 0, speedFactor * 0.1));
+              setBgSize((prev) => lerp(prev, MIN_BG_SCALE, speedFactor * 0.1));
+            } else {
+              setTruckScale((prev) => lerp(prev, MAX_TRUCK_SCALE, speedFactor * 0.3));
+              setTruckMoveY((prev) => lerp(prev, 0, speedFactor * 0.3));
+              setBgSize((prev) => lerp(prev, MIN_BG_SCALE, speedFactor * 0.3));
+            }
           }
-  
+
           setLastScrollY(currentScroll);
           ticking = false;
         });
-  
         ticking = true;
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY, isVisible]);
-  const handleMouseMove = (e) => {
-  const { clientX, clientY } = e;
-  const centerX = window.innerWidth / 2;
-  const centerY = window.innerHeight / 2;
-
-  const rotateY = ((clientX - centerX) / centerX) * 20; // Left-Right movement
-  const rotateX = ((clientY - centerY) / centerY) * -20; // Up-Down movement
-
-  setTruckTilt(rotateY);
-  setTruckShift(rotateX);
-};
-  
 
   return (
-    <section className="relative w-full h-[1100px] flex overflow-hidden items-center justify-between px-12 bg-cover bg-center transition-all duration-500 ease-out">
+    <section className="relative h-[1200px] w-full flex overflow-hidden items-center justify-between px-12 bg-cover bg-center transition-all duration-500 ease-out">
       <img
         src={i1}
         alt="Background"
@@ -90,7 +94,6 @@ const LogisticsNetwork = () => {
         style={{ transform: `scale(${bgSize / 100})` }}
       />
 
-      {/* Left Side Text */}
       <div className="w-1/2 relative bottom-16 left-12">
         <h2 className="text-4xl font-bold text-Red uppercase">
           What Exactly Does <br />
@@ -107,18 +110,17 @@ const LogisticsNetwork = () => {
         </a>
       </div>
 
-      {/* Right Side Square Box */}
       <div className="w-1/2">
         <div ref={squareBoxRef} className="relative w-[530px] h-[500px] flex justify-center items-center">
           <div className="absolute w-full h-full border-[20px] border-[#032843] left-[9%]"></div>
 
-          {/* Truck Image with 3D Effect */}
           <img
             src={i2}
             alt="Truck"
-            className="absolute w-[400px] left-[20%] top-[25%] object-cover transition-transform duration-500 ease-out"
+            className="absolute w-[370px] left-[10%] top-[25%] object-cover transition-transform duration-500 ease-out"
             style={{
-              transform: `perspective(1000px) scale(${truckScale}) translateX(${truckShift}px) rotateY(${truckTilt}deg)`,
+              transform: `perspective(1000px) scale(${truckScale}) translateY(${truckMoveY}px)`,
+              transformOrigin: "left center",
             }}
           />
         </div>
