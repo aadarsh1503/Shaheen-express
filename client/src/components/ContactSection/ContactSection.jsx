@@ -13,7 +13,7 @@ const ContactSection = () => {
           <AiOutlineEnvironment className="text-Red shrink-0 text-5xl" />
           <div>
             <h3 className="text-Blue text-2xl mb-4 font-semibold">Address</h3>
-            <p className="text-gray-600 italic">
+            <p className="text-[#73777F] italic">
               Flat 22, Building 661, Block 712, Road 1208, P.O Box 54121, Manama, Kingdom of Bahrain
             </p>
           </div>
@@ -35,10 +35,10 @@ const ContactSection = () => {
   <AiOutlinePhone className="text-Red shrink-0 text-5xl" />
   <div>
     <h3 className="text-Blue text-2xl font-semibold">Phone</h3>
-    <p className="text-gray-600 font-noto-serif mb-4">
-      <a href="tel:+97313303301" className="hover:underline text-gray-600">+973 1330 3301</a>, 
-      <a href="tel:+97333340017" className="hover:underline text-gray-600"> +973 3334 0017</a>, 
-      <a href="tel:+97333117441" className="hover:underline text-gray-600"> +973 3311 7441</a>
+    <p className="text-[#73777F] font-noto-serif mb-4">
+      <a href="tel:+97313303301" className="hover:underline text-[#73777F]">+973 1330 3301</a>, 
+      <a href="tel:+97333340017" className="hover:underline text-[#73777F]"> +973 3334 0017</a>, 
+      <a href="tel:+97333117441" className="hover:underline text-[#73777F]"> +973 3311 7441</a>
     </p>
   </div>
 </div>
