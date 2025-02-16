@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import i1 from "./i1.jpg";
 
-import i2 from "./i2.webp";
+import i4 from "./i4.png";
 
 const LogisticsNetwork = () => {
   const [truckScale, setTruckScale] = useState(1);
@@ -116,9 +116,9 @@ const LogisticsNetwork = () => {
           <div className="absolute w-full h-full border-[20px] border-[#032843] left-[9%]"></div>
 
           <img
-            src={i2}
+            src={i4}
             alt="Truck"
-            className="absolute w-[320px] left-[20%] top-[25%] object-cover transition-transform duration-500 ease-out"
+            className="absolute w-[370px] left-[10%] top-[25%] object-cover transition-transform duration-500 ease-out"
             style={{
               transform: `perspective(1000px) scale(${truckScale}) translateY(${truckMoveY}px)`,
               transformOrigin: "left center",
