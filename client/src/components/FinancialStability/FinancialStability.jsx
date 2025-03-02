@@ -10,7 +10,7 @@ import Last1 from "./Last1";
 const FinancialStability = () => {
   return (
     <div>
-    <div className="relative flex items-center font-noto-sans-display bg-white w-full min-h-[400px]">
+    <div className="relative hidden lg:flex items-center font-noto-sans-display bg-white w-full min-h-[400px]">
       {/* Red Background on the Left */}
       <div className="absolute left-0 top-0 h-full w-1/3 bg-Red"></div>
 
@@ -42,6 +42,34 @@ const FinancialStability = () => {
         </div>
       </div>
     </div>
+    <div class="relative flex items-center lg:hidden  font-noto-sans-display bg-white w-full min-h-[400px]">
+  <div class="absolute left-0 top-0 h-full lg:w-1/3 bg-Red"></div>
+
+  <div class="relative z-10 flex flex-col-reverse lg:flex-row w-full top-[18px] max-w-6xl mx-auto">
+    <div class="lg:w-1/2 w-full p-8">
+    <p className="text-gray-600 mb-5">Financial Stability</p>
+      <h2 class="text-3xl mb-5 font-semibold text-[#264795]">
+      Financial Stability and Continuous growth
+      </h2>
+      <p className="text-gray-600 mt-4">
+          We are always here to help you achieve your financial goals and become financially stable, whether you are a carrier or want to have your products shipped by us.
+          </p>
+      <a href="/contact">
+        <button class="mt-6 bg-Red text-white py-2 px-6 rounded-lg shadow-md hover:bg-red-600 transition">
+          CONTACT US
+        </button>
+      </a>
+    </div>
+
+    <div class="lg:w-1/2 w-full p-4">
+      <img
+        src={i2}
+        alt="Flatbed Truck"
+        class="rounded-lg shadow-lg w-full h-auto"
+      />
+    </div>
+  </div>
+</div>
 
 <Middle1 />
 <Last1 />

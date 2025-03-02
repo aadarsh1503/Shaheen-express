@@ -5,7 +5,7 @@ import i4 from "./i4.jpg"
 
 export default function Shipping1() {
     return (
-      <div className="flex flex-col lg:flex-row w-full h-[500px]">
+      <div className="flex flex-col lg:flex-row w-full lg:mb-0 mb-[1100px] h-[500px]">
         {/* Card 1 */}
         <div
           className="relative  w-full lg:w-1/4 p-8 text-white"

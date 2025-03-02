@@ -19,11 +19,11 @@ export default function SmallParcel() {
         {/* Content Container */}
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center w-full">
           {/* Left Content */}
-          <div className="lg:w-1/2 relative left- text-left  text-white">
+          <div className="lg:w-1/2 lg:py-0 py-6 relative left- text-left  text-white">
             <h2 className="text-4xl font-semibold text-Blue ">
             Small Parcel Shipping
             </h2>
-            <p className="mt-4 text-[18px] w-[500px] text-gray-900">
+            <p className="mt-4 text-[18px] w-full lg:w-[500px] text-gray-900">
             When small parcel shipments are required and the customers expectations are higher than ever, than a provider like Shaheen Express can boost your efficiency without breaking the bank. Allow our vast network and cutting-edge supply chain technology to work for you.
 
             </p>

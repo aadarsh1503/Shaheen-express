@@ -2,9 +2,10 @@ import React from "react";
 import i3 from "./i3.png"
 const Intermodal1 = () => {
   return (
-    <div className="relative flex items-center font-noto-sans-display bg-white w-full min-h-[400px]">
+    <>
+    <div className="relative  lg:flex hidden items-center font-noto-sans-display bg-white w-full min-h-[400px]">
       {/* Red Background on the Left */}
-      <div className="absolute left-0 top-0 h-full w-1/3 bg-Red"></div>
+      <div className="absolute lg:flex hidden left-0 top-0 h-full w-1/3 bg-Red"></div>
 
       {/* Content Section */}
       <div className="relative z-10 flex w-full top-[18px] max-w-6xl mx-auto">
@@ -34,6 +35,36 @@ const Intermodal1 = () => {
         </div>
       </div>
     </div>
+
+<div class="relative flex items-center lg:hidden  font-noto-sans-display bg-white w-full min-h-[400px]">
+<div class="absolute left-0 top-0 h-full lg:w-1/3 bg-Red"></div>
+
+<div class="relative z-10 flex flex-col-reverse lg:flex-row w-full top-[18px] max-w-6xl mx-auto">
+  <div class="lg:w-1/2 w-full p-8">
+    <p class="text-gray-600 mb-5">Flatbed</p>
+    <h2 class="text-3xl mb-5 font-semibold text-[#264795]">
+    What sets our intermodal services apart
+    </h2>
+    <p class="text-gray-600 mt-4">
+    Improving your over-the-road shipments with intermodal capacity provides numerous advantages to your company. Anyone can benefit from our expertise with cutting-edge technology & Shaheen Express will assist you in mitigating the effects of seasonal, environmental, regulatory, and industry factors.
+    </p>
+    <a href="/contact">
+      <button class="mt-6 bg-Red text-white py-2 px-6 rounded-lg shadow-md hover:bg-red-600 transition">
+        CONTACT US
+      </button>
+    </a>
+  </div>
+
+  <div class="lg:w-1/2 w-full p-4">
+    <img
+      src={i3}
+      alt="Flatbed Truck"
+      class="rounded-lg shadow-lg w-full h-auto"
+    />
+  </div>
+</div>
+</div>
+</>
   );
 };
 

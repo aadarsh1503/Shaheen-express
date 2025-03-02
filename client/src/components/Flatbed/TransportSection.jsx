@@ -12,7 +12,7 @@ const TransportSection = () => {
             alt="Flatbed Truck"
             className="w-full md:w-1/2 h-auto rounded-lg"
           />
-          <div className="md:w-1/2 relative ml-10 top-12">
+          <div className="md:w-1/2 relative ml-0 lg:ml-10 top-12">
             <h2 className="text-xl font-semibold mb-6 text-[#264795]">Flatbed/Open Deck</h2>
             <p className="text-gray-600 mt-2 w-[300px]">
               To overcome the market fluctuations by enhancing your planned supply
@@ -24,7 +24,7 @@ const TransportSection = () => {
 
         {/* Second Item */}
         <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-          <div className="md:w-1/2 relative top-12 left-44">
+          <div className="md:w-1/2 relative top-12  lg:mb-0 mb-10 lg:left-44">
             <h2 className="text-xl font-semibold mb-6 text-[#264795]">Hot Shot</h2>
             <p className="text-gray-600 mt-2 w-[300px]">
               Suitable for hauling small, time-sensitive, less than truckload flatbed

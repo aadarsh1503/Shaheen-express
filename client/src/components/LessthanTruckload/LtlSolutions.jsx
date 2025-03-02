@@ -50,12 +50,12 @@ const LtlSolutions = () => {
   ];
 
   return (
-    <div className="py-10 px-5 bg-white text-center min-h-screen mb-[400px]">
+    <div className="py-10 px-5 bg-white text-center min-h-screen mb-[2200px] lg:mb-[400px]">
       <h2 className="text-3xl font-semibold text-Blue">Less than Truckload (LTL) Solutions</h2>
       <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
         If any LTL shipper requires the flexibility and visibility to anticipate any challenges, it is the first step towards achieving exceptional results. With Shaheen Express, you can cover all of your less-than-truckload needs from every angle.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-[1100px] h-[600px] mx-auto mt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full lg:w-[1100px] h-[600px] mx-auto mt-8">
         {solutions.map((item, index) => (
           <div key={index} className="bg-Red   text-white p-12 rounded-lg shadow-lg">
             <div className="flex items-center relative right-6 gap-2">

@@ -17,11 +17,11 @@ export default function LessthanTruckload() {
         {/* Content Container */}
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center w-full">
           {/* Left Content */}
-          <div className="lg:w-1/2 relative left- text-left  text-white">
+          <div className="lg:w-1/2 relative lg:py-0 py-6 left- text-left  text-white">
             <h2 className="text-4xl font-semibold text-Blue ">
             Less than Truckload (LTL) <br />Shipping 
             </h2>
-            <p className="mt-4 text-[18px] w-[500px] text-gray-900">
+            <p className="mt-4 text-[18px] w-full lg:w-[500px] text-gray-900">
             With the growth of ecommerce, less truckload shipping necessitates greater flexibility than ever before. We will assist you in determining the best combination of LTL services to achieve efficiencies while exceeding customer expectations.
 
             </p>

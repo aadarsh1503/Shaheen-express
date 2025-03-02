@@ -1,6 +1,6 @@
 export default function BoxTruckService() {
     return (
-      <div className="flex items-center space-x-6 p-8 mt-16 bg-white ml-[200px]">
+      <div className="flex items-center space-x-6 p-8 mt-16 bg-white ml-0 lg:ml-[200px]">
         {/* Left Number Section */}
         <div className="text-center border-r border-gray-300 pr-6">
           <h3 className="text-[110px] text-gray-300 font-light">01</h3>

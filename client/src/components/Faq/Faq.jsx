@@ -8,7 +8,7 @@ import i6 from "./i6.jpg"
 const FAQGrid = () => {
   return (
     <div className="bg-[#EEF0F2]">
-    <div className="grid grid-cols-2 max-w-7xl mx-auto  font-noto-serif md:grid-cols-3  p-4">
+    <div className="grid grid-cols-1 max-w-7xl mx-auto  font-noto-serif md:grid-cols-3  p-4">
     <div className="bg-[#BBDA00]"></div>
       
       {/* Fifth Box */}
@@ -269,12 +269,6 @@ Is there any way to contact you, if I face any error while using your applicatio
       {/* Sixth Box (Colored Background) */}
       <div className="bg-[#F6C11B]"></div>
 
-
-
-
-
-
-
       <div className="bg-white p-6 ">
         <h2 className="text-2xl mb-6 font-bold text-Blue">
          
@@ -302,11 +296,12 @@ Is there any way to contact you, if I face any error while using your applicatio
 
         </p>
       </div>
-      
-      {/* Fourth Box (Colored Background) */}
-    
 
     </div>
+
+
+
+
     </div>
   );
 };

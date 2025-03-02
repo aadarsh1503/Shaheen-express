@@ -26,7 +26,8 @@ const advantages = [
 
 const AdvantagesSection = () => {
   return (
-    <div className="flex items-center justify-center gap-10 py-10 px-6 bg-white">
+    <>
+    <div className=" items-center lg:flex hidden  justify-center gap-10 py-10 px-6 bg-white">
       {/* Left Side Text */}
       <div className="w-1/3">
         <h4 className="text-black text-sm mb-6 font-semibold">Features</h4>
@@ -50,6 +51,33 @@ const AdvantagesSection = () => {
         ))}
       </div>
     </div>
+
+    {/* // mobile */}
+    <div className="flex flex-col lg:hidden lg:flex-row items-center justify-center gap-10 py-10 px-6 bg-white">
+      {/* Left Side Text - Moves above on mobile */}
+      <div className="w-full lg:w-1/3 text-center lg:text-left">
+        <h4 className="text-black text-sm mb-6 font-semibold">Features</h4>
+        <h2 className="text-[#264795] text-4xl lg:text-5xl font-light leading-tight">
+          Advantages to Work With Shaheen Express LLC
+        </h2>
+      </div>
+
+      {/* Right Side Cards - 2 Columns on large screens, 1 Column on mobile */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {advantages.map((advantage, index) => (
+          <div
+            key={index}
+            className={`w-full sm:w-56 h-56 rounded-sm shadow-lg hover:bg-[#f83c3c] cursor-pointer flex flex-col justify-center items-center ${advantage.bgColor} text-white`}
+          >
+            {advantage.icon}
+            <p className="text-center text-lg font-semibold mt-3 px-4">
+              {advantage.text}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+    </>
   );
 };
 

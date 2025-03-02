@@ -18,15 +18,15 @@ export default function Cps() {
         {/* Content Container */}
         <div className="max-w-6xl mx-auto  flex flex-col lg:flex-row items-center w-full">
           {/* Left Content */}
-          <div className="lg:w-1/2 relative left-16 text-left  text-white">
-            <h2 className="text-4xl font-semibold text-Blue ">
+          <div className="lg:w-1/2 relative left-0 py-6 lg:py-0 lg:left-16 text-left  text-white">
+            <h2 className="text-4xl  font-semibold text-Blue ">
             Carrier Payment Service
             </h2>
-            <p className="mt-4 text-[16px] w-[500px] text-gray-900">
+            <p className="mt-4 text-[16px] w-full lg:w-[500px] text-gray-900">
             Now you do not need to worry about your payment as we have brought up the easiest and most convenient Carrier payment Service for you. Get paid faster for the work you have done with our Carrier payment service.
 
             </p>
-            <p className=" mt-4 text-[16px] w-[500px] text-gray-900">﻿To start or apply for The payment cycle or process, upload your documentation of the load work. We give you several convenient options to submit your Paperwork. You're requested to choose only the options which work for you.</p>
+            <p className=" mt-4 text-[16px] w-full lg:w-[500px] text-gray-900">﻿To start or apply for The payment cycle or process, upload your documentation of the load work. We give you several convenient options to submit your Paperwork. You're requested to choose only the options which work for you.</p>
             <a href="/contact">
             <button className="mt-6 cursor-pointer bg-Red text-white px-6 py-3 font-semibold rounded-md">
               CONNECT WITH AN EXPERT

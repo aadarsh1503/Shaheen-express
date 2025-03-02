@@ -7,7 +7,7 @@ import TestimonialTruck from "./TestimonialTruck";
 const TruckingDispatch = () => {
   return (
     <div>
-    <div className="relative flex items-center font-noto-sans-display bg-white w-full min-h-[400px]">
+    <div className="relative lg:flex hidden items-center font-noto-sans-display bg-white w-full min-h-[400px]">
       {/* Red Background on the Left */}
       <div className="absolute left-0 top-0 h-full w-1/3 bg-red-500"></div>
 
@@ -39,6 +39,36 @@ const TruckingDispatch = () => {
         </div>
       </div>
     </div>
+    <div class="relative flex items-center lg:hidden  font-noto-sans-display bg-white w-full min-h-[400px]">
+  <div class="absolute left-0 top-0 h-full lg:w-1/3 bg-Red"></div>
+
+  <div class="relative z-10 flex flex-col-reverse lg:flex-row w-full top-[18px] max-w-6xl mx-auto">
+    <div class="lg:w-1/2 w-full p-8">
+    <p className="text-gray-600 mb-5">Trucking & Dispatch</p>
+      <h2 class="text-3xl mb-5 font-semibold text-[#264795]">
+      Trucking And Dispatch Services
+      </h2>
+      <p className="text-black font-noto-serif tracking-wide mt-4">
+          Do you need trucking and dispatch services to load and deliver your products on time? Then we have a vast array of trucking and dispatch services available to you. Because we have simplified our trucking and dispatch services, you can rely on us. so that we can bridge the gap between you and your customers.
+          </p>
+      <a href="/contact">
+        <button class="mt-6 bg-Red text-white py-2 px-6 rounded-lg shadow-md hover:bg-red-600 transition">
+          CONTACT US
+        </button>
+      </a>
+    </div>
+
+    <div class="lg:w-1/2 w-full p-4">
+      <img
+        src={i2}
+        alt="Flatbed Truck"
+        class="rounded-lg shadow-lg w-full h-auto"
+      />
+    </div>
+  </div>
+</div>
+    
+    
     <FeaturesSection />
     <AdvantagesSection />
     <AgentPartnerSection />

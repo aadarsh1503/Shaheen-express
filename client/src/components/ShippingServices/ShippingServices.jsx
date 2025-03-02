@@ -33,7 +33,7 @@ const services = [
 
 export default function ShippingServices() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 -gap-32 p-6 justify-center">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:-gap-32 p-6 justify-center">
       {services.map((service, index) => (
         <a
           key={index}

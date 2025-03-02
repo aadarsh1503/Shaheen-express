@@ -18,11 +18,11 @@ export default function TransportationOptimization() {
         {/* Content Container */}
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center w-full">
           {/* Left Content */}
-          <div className="lg:w-1/2 relative left- text-left  text-white">
+          <div className="lg:w-1/2 py-6 lg:py-0 relative left- text-left  text-white">
             <h2 className="text-4xl font-semibold text-Blue ">
             Transportation Optimization
             </h2>
-            <p className="mt-4 text-[18px] w-[500px] text-gray-900">
+            <p className="mt-4 text-[18px] w-full lg:w-[500px] text-gray-900">
             Optimization of transportation is one of the topmost crucial parts of a logistic service that helps in providing the best and fast transportation service at a very low cost. This is the reason that we have focused very much on the optimization part of our transportation services.
 
             </p>

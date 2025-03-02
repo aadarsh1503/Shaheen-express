@@ -20,11 +20,11 @@ export default function TruckLoad() {
         {/* Content Container */}
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center w-full">
           {/* Left Content */}
-          <div className="lg:w-1/2 relative left- text-left  text-white">
+          <div className="lg:w-1/2 lg:py-0 py-4 relative left- text-left  text-white">
             <h2 className="text-4xl font-semibold text-Blue ">
             Truckload Services
             </h2>
-            <p className="mt-4 text-[18px] w-[500px] text-gray-900">
+            <p className="mt-4 text-[18px] w-full lg:w-[500px] text-gray-900">
             Now you can strengthen your supply chain with the strength of our business and credible truckload capacity in all markets. Shaheen Express has experts for full truckload freight (FTL).
             </p>
             <a href="/contact">

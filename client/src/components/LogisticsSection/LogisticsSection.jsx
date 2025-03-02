@@ -23,7 +23,7 @@ const LogisticsSection = () => {
         {/* Background Truck and LOGISTICS text */}
         <div className="absolute inset-0 flex justify-center items-center">
           {/* Text with lowest z-index */}
-          <div className="absolute text-[256px] font-bold text-[#fa8380] text-opacity-30 top-22 transform z-0">
+          <div className="absolute text-[50px] lg:text-[256px] font-bold text-[#fa8380] text-opacity-30 top-78 lg:top-22 transform z-0">
             Logistics
           </div>
 

@@ -17,11 +17,11 @@ export default function Load1() {
         {/* Content Container */}
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center w-full">
           {/* Left Content */}
-          <div className="lg:w-1/2 relative left-10 text-left  text-white">
+          <div className="lg:w-1/2 relative py-6 lg:py-0 left-4 lg:left-10 text-left  text-white">
             <h2 className="text-4xl font-semibold text-Blue ">
             Book your loads instantly and save your time
             </h2>
-            <p className="mt-4 text-[18px] w-[500px] text-gray-900">
+            <p className="mt-4 text-[18px] w-full lg:w-[500px] text-gray-900">
             We have a lot more freight than ever before on our load board. Moreover, are free to book any load. We have more freight available on the load boards than ever before and can book the loads with our Shaheen Express carrier, including short-haul, cross-border, temperature-controlled, and so on, right away. Our app is available for 24hr for use whenever and wherever required.
 
             </p>

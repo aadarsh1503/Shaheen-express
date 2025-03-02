@@ -1,14 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaHeadphones } from "react-icons/fa";
+import { FaBars, FaHeadphones, FaTimes } from "react-icons/fa";
 import { FaAngleRight, FaAngleDown, FaAngleUp } from "react-icons/fa6";
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(null);
   const [subDropdown, setSubDropdown] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef(null);
   const location = useLocation(); // Track route changes
 
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
   const handleDropdownHover = (menu) => {
     setDropdown(menu);
   };
@@ -55,7 +60,7 @@ const Navbar = () => {
       {/* Top Section */}
       <div className="container mx-auto px-4 max-w-7xl flex justify-between items-center py-2">
         {/* Logo */}
-        <div className="flex items-center relative right-12">
+        <div className="flex items-center relative right-0 lg:right-12">
           <img
             src="https://shaheen-express.mubashir-rehman.com/wp-content/themes/shaheenExpress/assets/Images/Shaheen%20763x208.png"
             alt="Shaheen Express"
@@ -65,7 +70,7 @@ const Navbar = () => {
 
         {/* Address & Contact */}
         <div className="flex items-center font-noto-sans-display justify-center text-[14px] leading-loose text-gray-800">
-          <span className="text-center">
+          <span className="text-center lg:flex hidden">
             FLAT 22, BUILDING 661, BLOCK 712, ROAD 1208, MANAMA, KINGDOM OF BAHRAIN
           </span>
           <div className="mx-2 h-4 border-l border-gray-400"></div>
@@ -79,7 +84,7 @@ const Navbar = () => {
       </div>
 
       {/* Bottom Navbar */}
-      <nav ref={navRef} className="w-full font-noto-sans-display font-medium items-center bg-white">
+      <nav ref={navRef} className="w-full lg:flex hidden font-noto-sans-display font-medium items-center bg-white">
         <div className="mx-auto px-4">
           <ul className="flex space-x-24 ml-14 py-3 text-[14px] text-gray-900 tracking-wide relative">
             <li className="hover:text-Red items-center mt-[7px] cursor-pointer">
@@ -172,6 +177,108 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
+      <nav ref={navRef} className="w-full lg:hidden flex font-noto-sans-display font-medium items-center bg-white">
+  <div className="mx-auto px-4">
+    <div className="flex justify-between items-center py-3">
+  
+      <button onClick={toggleMenu} className="text-gray-900 relative left-38 focus:outline-none">
+        {isOpen ? <FaTimes /> : <FaBars />}
+      </button>
+    </div>
+
+ 
+    <div className={`fixed top-0 left-0 w-2/3 h-full bg-white shadow-lg z-50 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300`}>
+      <button onClick={toggleMenu} className="absolute top-4 right-4 text-gray-900">
+        <FaTimes />
+      </button>
+      <ul className="mt-16 space-y-6 px-6 text-gray-900 text-[14px] tracking-wide">
+        <li>
+          <Link to="/contact" onClick={toggleMenu}>CONTACT US</Link>
+        </li>
+
+        {[
+          {
+            label: "SHIPPERS",
+            path: "/flatbed",
+            subRoutes: [
+              {
+                label: "FREIGHT SERVICES",
+                path: "/flatbed",
+                subSubRoutes: ["/flatbed", "/temperature-controlled", "/drayage", "/power-only", "/box-truck"]
+              },
+              { label: "TRUCKLOAD", path: "/truck-Load" },
+              { label: "LESS THAN TRUCKLOAD", path: "/lst" },
+              { label: "INTERMODAL", path: "/intermodal" },
+              { label: "CROSS BORDER", path: "/crossBorder" },
+              { label: "SMALL PARCEL", path: "/smallParcel" }
+            ]
+          },
+          {
+            label: "CARRIERS",
+            subRoutes: [
+              { label: "Load Board", path: "/loadBoard" },
+              { label: "Carrier Payment services", path: "/carrierPayment" },
+              { label: "Faq's", path: "/faq" }
+            ]
+          },
+          {
+            label: "RESOURCES",
+            subRoutes: [{ label: "Trucking Dispatch Services", path: "/trucking-Dispatch" }]
+          },
+          {
+            label: "PLANNING",
+            subRoutes: [{ label: "Transportation Optimization", path: "/transportation" }]
+          },
+          {
+            label: "ADVANTAGES",
+            subRoutes: [
+              { label: "Time Management", path: "/timeManagement" },
+              { label: "Financial Stability and continue Growth", path: "/financialStability" }
+            ]
+          }
+        ].map((menu) => (
+          <li key={menu.label} className="relative">
+            <div className="flex items-center justify-between cursor-pointer" onClick={() => handleDropdownHover(menu.label)}>
+              {menu.label}
+              {dropdown === menu.label ? <FaAngleUp /> : <FaAngleDown />}
+            </div>
+
+            {dropdown === menu.label && (
+              <ul className="mt-2 pl-4 space-y-4">
+                {menu.subRoutes.map((route, index) => (
+                  <li key={index} className="relative">
+                    {route.subSubRoutes ? (
+                      <>
+                        <div className="flex items-center justify-between cursor-pointer" onClick={() => handleSubDropdownHover(route.label)}>
+                          {route.label.toUpperCase()}
+                          {subDropdown === route.label ? <FaAngleUp /> : <FaAngleRight />}
+                        </div>
+
+                        {subDropdown === route.label && (
+                          <ul className="mt-2 pl-4 space-y-2">
+                            {route.subSubRoutes.map((subRoute, subIndex) => (
+                              <li key={subIndex}>
+                                <Link to={subRoute} onClick={toggleMenu}>{subRoute.replace("/", "").toUpperCase()}</Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </>
+                    ) : (
+                      <Link to={route.path} onClick={toggleMenu}>{route.label.toUpperCase()}</Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
     </header>
   );
 };

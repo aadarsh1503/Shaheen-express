@@ -23,27 +23,28 @@ const Footer = () => {
           We Offer Solutions to Various Industries
         </h2>
         
-        <div className="flex justify-center space-x-9 mb-8">
-          {[
-            { name: "Frozen Food & Beverages", image: i1 },
-            { name: "Construction Material", image: i2 },
-            { name: "Agriculture", image: i3 },
-            { name: "Factory Material", image: i4 },
-            { name: "Oversized Cargo", image: i5 },
-            { name: "Meat Fish and Poultry", image: i6 },
-          ].map((item, index) => (
-            <div key={index} className="text-center group">
-              <a href="/">
-                <div className="w-32 h-32 border-1 border-black rounded-full mx-auto mb-2 cursor-pointer transition-all duration-300 group-hover:bg-[#811F1D] flex items-center justify-center overflow-hidden">
-                  <img src={item.image} alt={item.name} className="w-16 h-16 object-cover rounded-full" />
-                </div>
-              </a>
-              <p className="text-sm transition-all duration-300 font-bold mb-10 group-hover:text-[#811F1D]">
-                {item.name}
-              </p>
-            </div>
-          ))}
+        <div className="grid grid-cols-2 md:flex md:justify-center md:space-x-9 mb-8 gap-6 md:gap-0">
+  {[
+    { name: "Frozen Food & Beverages", image: i1 },
+    { name: "Construction Material", image: i2 },
+    { name: "Agriculture", image: i3 },
+    { name: "Factory Material", image: i4 },
+    { name: "Oversized Cargo", image: i5 },
+    { name: "Meat Fish and Poultry", image: i6 },
+  ].map((item, index) => (
+    <div key={index} className="text-center group">
+      <a href="/">
+        <div className="w-32 h-32 border border-black rounded-full mx-auto mb-2 cursor-pointer transition-all duration-300 group-hover:bg-[#811F1D] flex items-center justify-center overflow-hidden">
+          <img src={item.image} alt={item.name} className="w-16 h-16 object-cover rounded-full" />
         </div>
+      </a>
+      <p className="text-sm transition-all duration-300 font-bold mb-10 group-hover:text-[#811F1D]">
+        {item.name}
+      </p>
+    </div>
+  ))}
+</div>
+
 
         {/* Footer Grid Sections */}
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -16,7 +16,7 @@ export default function TemperatureControlledShipping() {
         {/* Content Container */}
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center w-full">
           {/* Left Content */}
-          <div className="lg:w-1/2 relative left-32 text-left  text-white">
+          <div className="lg:w-1/2 relative left-0 lg:left-32 text-left  text-white">
             <h2 className="text-3xl font-semibold text-blue-900">
               Temperature Controlled <br /> Shipping
             </h2>
@@ -74,6 +74,7 @@ export default function TemperatureControlledShipping() {
           </div>
         </div>
       </div>
+      
       <Temprature1 />
       <ShippingServices />
       <AdvantagesSection />

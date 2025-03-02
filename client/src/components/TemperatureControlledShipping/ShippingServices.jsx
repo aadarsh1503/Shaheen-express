@@ -5,14 +5,14 @@ import i4 from "./i4.jpg"
 
 export default function ShippingServices() {
     return (
-      <div className="flex flex-col lg:flex-row w-full h-[500px]">
+      <div className="flex flex-col lg:flex-row w-full h-screen lg:mb-0 mb-[700px] lg:h-[500px]">
         {/* Card 1 */}
         <div
           className="relative  w-full lg:w-1/4 p-8 text-white"
           style={{ backgroundImage: `Url(${i2})`, backgroundSize: "cover", backgroundPosition: "center" }}
         >
              <div
-    className="absolute inset-0 bg-[#328DB9] opacity-70" // यहां opacity को समायोजित करें (0.50 = 50%)
+    className="absolute inset-0 bg-[#328DB9] opacity-70"
   ></div>
           <div className="relative bg-opacity-75 mt-16 p-6 h-full flex flex-col">
             <h2 className="text-lg font-bold uppercase">Temperature Controlled Truckload</h2>
@@ -36,7 +36,7 @@ export default function ShippingServices() {
 >
   {/* White Overlay with Opacity */}
   <div
-    className="absolute inset-0 bg-white opacity-70" // यहां opacity को समायोजित करें (0.50 = 50%)
+    className="absolute inset-0 bg-white opacity-70" 
   ></div>
 
   {/* Content */}

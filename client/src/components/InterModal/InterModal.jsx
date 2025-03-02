@@ -17,13 +17,13 @@ export default function InterModal() {
         style={{ backgroundImage: `Url(${i1})` }}
       >
         {/* Content Container */}
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center w-full">
+        <div className="max-w-6xl  mx-auto flex flex-col lg:flex-row items-center w-full">
           {/* Left Content */}
           <div className="lg:w-1/2 relative left- text-left  text-white">
             <h2 className="text-4xl font-semibold text-Blue ">
             Intermodal Shipping
             </h2>
-            <p className="mt-4 text-[18px] w-[500px] text-gray-900">
+            <p className="mt-4 text-[18px] w-full lg:w-[500px] text-gray-900">
             'Shaheen Express' Intermodal services provide you with the most up-to-date options and control over your supply chain. We have a wealth of experience and resources to supplement and frequently improve your current strategy.
 
             </p>

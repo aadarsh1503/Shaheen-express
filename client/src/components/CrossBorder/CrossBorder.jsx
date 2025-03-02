@@ -19,11 +19,11 @@ export default function CrossBorder() {
         {/* Content Container */}
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center w-full">
           {/* Left Content */}
-          <div className="lg:w-1/2 relative left- text-left  text-white">
+          <div className="lg:w-1/2 py-6 lg:py-0 relative left- text-left  text-white">
             <h2 className="text-4xl font-semibold text-Blue ">
             Cross Border Shipping Services
             </h2>
-            <p className="mt-4 text-[18px] w-[500px] text-gray-900">
+            <p className="mt-4 text-[18px] w-full  lg:w-[500px] text-gray-900">
             Logistics makes over-the-road cross-border shipping easier with the help of Pamm. Trust our experienced staff to understand traffic flows, customs regulations, and border processes at major border-crossing locations when you're crossing one or more borders.
 
             </p>

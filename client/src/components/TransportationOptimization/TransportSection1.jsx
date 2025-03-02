@@ -9,12 +9,12 @@ const TransportSection1 = () => {
         <img
           src={i1}
           alt="Fleet of Trucks"
-          className="w-[500px] relative left-32 h-auto rounded-lg shadow-lg"
+          className="w-[500px] relative lg:left-32 left-0 h-auto rounded-lg shadow-lg"
         />
       </div>
 
       {/* Text Section */}
-      <div className="w-full lg:w-1/2 relative right-9 top-12 bg-Red p-6 lg:p-12 text-white rounded-lg flex flex-col gap-6">
+      <div className="w-full lg:w-1/2 relative right-0 lg:right-9 top-12 bg-Red p-6 lg:p-12 text-white rounded-lg flex flex-col gap-6">
         <div className="flex items-start gap-4">
           <div className="bg-white text-Red p-2 rounded-full text-xl">
             <FaAngleDoubleRight />
