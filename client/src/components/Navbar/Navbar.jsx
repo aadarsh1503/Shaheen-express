@@ -27,6 +27,24 @@ const Navbar = () => {
     setSubDropdown(null);
   };
 
+  
+  // Toggle main dropdown
+  const handleDropdownClick = (label) => {
+    if (dropdown === label) {
+      setDropdown(null); // Close dropdown if it's already open
+    } else {
+      setDropdown(label); // Open dropdown
+    }
+  };
+  
+  // Toggle sub-dropdown
+  const handleSubDropdownClick = (label) => {
+    if (subDropdown === label) {
+      setSubDropdown(null); // Close sub-dropdown if it's already open
+    } else {
+      setSubDropdown(label); // Open sub-dropdown
+    }
+  };
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
@@ -180,13 +198,11 @@ const Navbar = () => {
       <nav ref={navRef} className="w-full lg:hidden flex font-noto-sans-display font-medium items-center bg-white">
   <div className="mx-auto px-4">
     <div className="flex justify-between items-center py-3">
-  
       <button onClick={toggleMenu} className="text-gray-900 relative left-38 focus:outline-none">
         {isOpen ? <FaTimes /> : <FaBars />}
       </button>
     </div>
 
- 
     <div className={`fixed top-0 left-0 w-2/3 h-full bg-white shadow-lg z-50 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300`}>
       <button onClick={toggleMenu} className="absolute top-4 right-4 text-gray-900">
         <FaTimes />
@@ -238,7 +254,10 @@ const Navbar = () => {
           }
         ].map((menu) => (
           <li key={menu.label} className="relative">
-            <div className="flex items-center justify-between cursor-pointer" onClick={() => handleDropdownHover(menu.label)}>
+            <div 
+              className="flex items-center justify-between cursor-pointer" 
+              onClick={() => handleDropdownClick(menu.label)} // Use click handler instead of hover
+            >
               {menu.label}
               {dropdown === menu.label ? <FaAngleUp /> : <FaAngleDown />}
             </div>
@@ -249,7 +268,10 @@ const Navbar = () => {
                   <li key={index} className="relative">
                     {route.subSubRoutes ? (
                       <>
-                        <div className="flex items-center justify-between cursor-pointer" onClick={() => handleSubDropdownHover(route.label)}>
+                        <div 
+                          className="flex items-center justify-between cursor-pointer" 
+                          onClick={() => handleSubDropdownClick(route.label)} // Use click handler for sub-dropdown
+                        >
                           {route.label.toUpperCase()}
                           {subDropdown === route.label ? <FaAngleUp /> : <FaAngleRight />}
                         </div>
