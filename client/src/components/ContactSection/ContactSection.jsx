@@ -27,7 +27,7 @@ const ContactSection = () => {
     setError('');
     
     try {
-      const response = await fetch('http://alshaheenexpress.com/send_to_a_mail.php', {
+      const response = await fetch('https://alshaheenexpress.com/send_to_a_mail.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
