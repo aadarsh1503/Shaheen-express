@@ -72,8 +72,8 @@ const ContactSection = () => {
             <AiOutlineEnvironment className="text-Red shrink-0 text-5xl" />
             <div>
               <h3 className="text-Blue text-2xl mb-4 font-semibold">Address</h3>
-              <p className="text-[#73777F] italic">
-                Flat 22, Building 661, Block 712, Road 1208, Manama, Kingdom of Bahrain
+              <p className="text-[#73777F] font-noto-serif ">
+              Flat 22, Building 661, Block 712, Road 1208, Manama, Kingdom of Bahrain
               </p>
             </div>
           </div>
