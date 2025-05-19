@@ -27,15 +27,24 @@ const ContactSection = () => {
     setError('');
     
     try {
+      // Format the message body to include all fields
+      const emailBody = `
+        Name: ${formData.name}
+        Email: ${formData.email}
+        Message: ${formData.message}
+      `;
+
       const response = await fetch('https://alshaheenexpress.com/send_to_a_mail.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          ...formData,
+          name: formData.name,
+          email: formData.email,
+          message: emailBody,  // Use the formatted message
           to: 'hello@alshaheenexpress.com',
-          subject: 'New Contact Form Submission'
+          subject: `New Contact Form Submission from ${formData.name}`
         })
       });
 
