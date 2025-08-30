@@ -95,7 +95,7 @@ const LogisticsNetwork = () => {
         style={{ transform: `scale(${bgSize / 100})` }}
       />
 
-      <div className="w-1/2 relative bottom-16 left-12">
+      <div className="w-1/2 relative bottom-16 left-0 lg:left-12">
         <h2 className="text-4xl font-bold text-Red uppercase">
           What Exactly Does <br />
           <span className="text-Red">Shaheen Express Do?</span>
@@ -105,7 +105,7 @@ const LogisticsNetwork = () => {
           across the Logistics network.
         </p>
         <a href="/contact">
-          <button className="mt-4 px-6 py-3 w-[200px] cursor-pointer font-bold bg-Red text-white rounded-full shadow-lg hover:bg-red-500 transition">
+          <button className="mt-4 px-6 py-3 w-full lg:w-[200px] cursor-pointer font-bold bg-Red text-white rounded-full shadow-lg hover:bg-red-500 transition">
             Start now
           </button>
         </a>

@@ -42,7 +42,7 @@ const ContactSection = () => {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          message: emailBody,  // Use the formatted message
+          message: emailBody,  // the formatted messageUse 
           to: 'hello@alshaheenexpress.com',
           subject: `New Contact Form Submission from ${formData.name}`
         })
