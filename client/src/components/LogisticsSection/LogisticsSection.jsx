@@ -1,5 +1,5 @@
 import React from "react";
-
+import i1 from "./i1.png"
 const LogisticsSection = () => {
   return (
     <div className="p-8">
@@ -29,7 +29,7 @@ const LogisticsSection = () => {
 
           {/* Image with higher z-index */}
           <img
-            src="https://shaheen-express.mubashir-rehman.com/wp-content/themes/shaheenExpress/assets/Images/image.png"
+            src={i1}
             alt="Truck"
             className="w-3/4 lg:w-[900px] relative top-44 object-cover z-10"
           />

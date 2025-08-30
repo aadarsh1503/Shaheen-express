@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaHeadphones, FaTimes } from "react-icons/fa";
 import { FaAngleRight, FaAngleDown, FaAngleUp } from "react-icons/fa6";
+import i1 from "./i1.png"
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(null);
@@ -80,7 +81,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center relative right-0 lg:right-12">
           <img
-            src="https://shaheen-express.mubashir-rehman.com/wp-content/themes/shaheenExpress/assets/Images/Shaheen%20763x208.png"
+            src={i1}
             alt="Shaheen Express"
             className="h-14"
           />

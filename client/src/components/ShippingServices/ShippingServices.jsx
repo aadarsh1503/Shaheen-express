@@ -5,28 +5,28 @@ const services = [
     title: "Power Only",
     description:
       "When the shipper owns the trailer that needs to be transported but does not have any trucks vacant then there is the requirement for power only shipping, the truck and driver...",
-    image: "https://shaheen-express.mubashir-rehman.com/wp-content/themes/shaheenExpress/assets/Images/A%20red%20truck%20driving%20on%20a%20road%20with%20mountains%20in%20the%20background.png",
+    image: "https://www.atsinc.com/hs-fs/hubfs/Images/Page%20Images/Pricing/Pricing-Page4.png?width=1500&name=Pricing-Page4.png",
     link: "/power-only",
   },
   {
     title: "Box Truck",
     description:
       "Shaheen Express provides you services of Heavy Haulers, we understand the importance of your box truck to your business. That’s the only reason when it comes to boxing truck transport...",
-    image: "https://shaheen-express.mubashir-rehman.com/wp-content/themes/shaheenExpress/assets/Images/con-air.png",
+    image: "https://www.motivps.com/wp-content/uploads/2020/01/EPIC-E450-Utilimaster-Box-Truck.jpg",
     link: "/box-truck",
   },
   {
     title: "Cross Border",
     description:
       "With the help of Shaheen Express, logistics facilitate your over-the-road cross-border shipping. When you’re crossing one or multiple borders, trust our experienced...",
-    image: "https://shaheen-express.mubashir-rehman.com/wp-content/themes/shaheenExpress/assets/Images/con1.png",
+    image: "https://avatars.mds.yandex.net/get-altay/9830718/2a000001916bed738fd269a7a9b0cd3fe19d/XXL_height",
     link: "/crossBorder",
   },
   {
     title: "Small Parcel",
     description:
       "When you want small parcels shipments and consumers’ expectations are higher than ever so, your business needs a provider like Shaheen Express that...",
-    image: "https://shaheen-express.mubashir-rehman.com/wp-content/themes/shaheenExpress/assets/Images/box.png",
+    image: "https://avatars.mds.yandex.net/i?id=26333633b1169208533994bb227a1bd00a394ef9-8906573-images-thumbs&n=13",
     link: "/smallParcel",
   },
 ];
