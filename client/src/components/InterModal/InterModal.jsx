@@ -1,7 +1,7 @@
 import { FaAngleDoubleRight } from "react-icons/fa";
 import i1 from "./i1.jpg"
 import ServicesSection from "./ServicesSection";
-import Intermodal1 from "./intermodal1";
+import Intermodal1 from "./Intermodal1";
 import AdvantagesSection from "../Flatbed/AdvantagesSection";
 import AgentPartnerSection from "../Flatbed/AgentPartnerSection";
 import TestimonialInterModal from "./TestimonialInterModal";

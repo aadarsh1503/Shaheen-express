@@ -6,8 +6,7 @@ import TransportServices from "./TransportServices";
 import Shipping1 from "./Shipping1";
 import AdvantagesSection from "../Flatbed/AdvantagesSection";
 import AgentPartnerSection from "../Flatbed/AgentPartnerSection";
-import TestimonialLoad from "../LoadBoard/TestimonialLoad";
-import Testimonialbox from "./TestimonialLoad";
+import Testimonialbox from "../LoadBoard/TestimonialLoad";
 
 
 export default function TruckLoad() {
