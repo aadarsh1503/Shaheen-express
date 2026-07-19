@@ -1,6 +1,6 @@
 import React from "react";
 import i1 from "./i1.jpg"
-import BoxTruckService from "./BoxTruckService.JSX";
+import BoxTruckService from "./BoxTruckService.jsx";
 import LogisticsSection from "./LogisticsSection";
 import AdvantagesSection from "../Flatbed/AdvantagesSection";
 import AgentPartnerSection from "../Flatbed/AgentPartnerSection";
