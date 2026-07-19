@@ -5,7 +5,6 @@ import viteLogo from '/vite.svg';
 import './App.css';
 import Hero from './components/Hero/Hero';
 import Footer from './components/Footer/Footer';
-import Navbar from './components/Navbar/Navbar.JSX';
 import FlatbedShipping from './components/Flatbed/Flatbed';
 import TemperatureControlledShipping from './components/TemperatureControlledShipping/TemperatureControlledShipping';
 import Drayage from './components/Drayage/Drayage';
@@ -25,6 +24,7 @@ import FAQGrid from './components/Faq/Faq';
 import TimeManagement from './components/TimeManagement/TimeManagement';
 import FinancialStability from './components/FinancialStability/FinancialStability';
 import Introduction from './components/Introduction/Introduction';
+import Navbar from './components/Navbar/Navbar';
 
 
 function App() {
